@@ -1,0 +1,16 @@
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: fff
+  secondary: fff
+  tertiary: ff0000
+  secondary-dark: 00283c
+  muted: 777
+  link: 00283c
+  navbar-color: d9dddc
+
+
+# Font Families
+font:
+  primary: "Palatino Linotype"
+  secondary: "Palatino Linotype"
+    

@@ -1,0 +1,14 @@
+- name: First Speaker
+  affiliation: Virginia University
+  website: https://engineering.virginia.edu/
+  image: default.jpg
+    
+- name: Second Speaker
+  affiliation: Virginia University
+  website: https://engineering.virginia.edu/
+  image: default.jpg
+
+- name: Third Speaker
+  affiliation: Virginia University
+  website: https://engineering.virginia.edu/
+  image: default.jpg

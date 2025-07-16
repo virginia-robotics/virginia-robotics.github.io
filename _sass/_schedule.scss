@@ -1,0 +1,25 @@
+// Adjust padding for all schedule cells
+table#schedule-table {
+  td, th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 100px;
+    vertical-align: top;
+  }
+}
+
+// Style the "time" column differently
+table#schedule-table td:first-child {
+  font-weight: 700;
+}
+
+// Adjust padding for all speaker cells
+table#speaker-table {
+  td, th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
