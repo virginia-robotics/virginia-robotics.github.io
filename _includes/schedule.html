@@ -11,21 +11,13 @@
           <th>Schedule</th>
           <th>Location</th>
         </tr>
+        {% for event in site.data.schedule %}
         <tr>
-          <td>10:00 AM</td>
-          <td>Welcoming Remarks</td>
-          <td>Link Lab</td>
+          <td>{{ event.time }}</td>
+          <td>{{ event.event }}</td>
+          <td>{{ event.place }}</td>
         </tr>
-        <tr>
-          <td>11:00 AM</td>
-          <td>Speaker X</td>
-          <td>Link Lab</td>
-        </tr>
-        <tr>
-          <td>12:00 AM</td>
-          <td>Lunch</td>
-          <td>UVA</td>
-        </tr>
+        {% endfor %}
     </table>
   </div>
 </section>

@@ -1,6 +1,6 @@
 title: Virginia Robotics
 description: > # this means to ignore newlines until "baseurl:"
-  The Virginia Robotics Symposium (VRS) aims to bring together Virginia robotics researchers. VRS is a one-day event with research talks, poster presentations, and social activities. The goal of VRS is to share exciting ideas and build new connections in the robotics research community across the Commonwealth.
+  The Virginia Robotics Symposium (VRS) brings together Virginia robotics researchers. VRS is a one-day event with research talks, poster presentations, and social activities. The goal of VRS is to share exciting ideas and build new connections across the Commonwealth.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "virginia-robotics.github.io" # the base hostname & protocol for your site
 

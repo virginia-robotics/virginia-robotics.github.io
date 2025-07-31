@@ -1,0 +1,55 @@
+- time: 9:30 AM
+  event: Sign In and Morning Coffee
+  place: Link Lab
+  
+- time: 10:00 AM
+  event: Welcoming Remarks
+  place: Link Lab
+
+- time: 10:10 AM
+  event: Speaker 1
+  place: Link Lab
+
+- time: 10:35 AM
+  event: Speaker 2
+  place: Link Lab
+
+- time: 11:00 AM
+  event: Morning Poster Session
+  place: Link Lab
+
+- time: 12:00 PM
+  event: Lunch
+  place: 
+
+- time: 1:00 PM
+  event: Lab Tours and Demos
+  place: Link Lab
+
+- time: 1:30 PM
+  event: Speaker 3
+  place: Link Lab
+
+- time: 1:55 PM
+  event: Speaker 4
+  place: Link Lab
+
+- time: 2:20 PM
+  event: Afternoon Poster Session
+  place: Link Lab
+
+- time: 3:20 PM 
+  event: Afternoon Coffee
+  place: Link Lab
+
+- time: 3:45 PM
+  event: Speaker 5
+  place: Link Lab
+
+- time: 4:10 PM
+  event: Panel Debate
+  place: Link Lab
+
+- time: 4:45 PM
+  event: Awards and Closing Remarks
+  place: Link Lab
