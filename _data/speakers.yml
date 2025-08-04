@@ -1,24 +1,24 @@
-- name: First Speaker
-  affiliation: Virginia University
-  website: https://engineering.virginia.edu/
-  image: default.jpg
+- name: Madhur Behl
+  affiliation: University of Virginia
+  website: https://www.madhurbehl.com/index.html
+  image: behl.jpg
+
+- name: Jana Kosecka
+  affiliation: George Mason University
+  website: https://volgenau.gmu.edu/profiles/kosecka
+  image: kosecka.jpg
+
+- name: Yen-Ling Kuo
+  affiliation: University of Virginia
+  website: https://yenlingkuo.com/
+  image: kuo.jpg
+
+- name: Suyi Li
+  affiliation: Virginia Tech
+  website: https://dare.super.site/
+  image: li.webp
     
-- name: Second Speaker
-  affiliation: Virginia University
-  website: https://engineering.virginia.edu/
-  image: default.jpg
-
-- name: Third Speaker
-  affiliation: Virginia University
-  website: https://engineering.virginia.edu/
-  image: default.jpg
-
-- name: Fourth Speaker
-  affiliation: Virginia University
-  website: https://engineering.virginia.edu/
-  image: default.jpg
-
-- name: Fifth Speaker
-  affiliation: Virginia University
-  website: https://engineering.virginia.edu/
-  image: default.jpg
+- name: Simon Stepputtis
+  affiliation: Virginia Tech
+  website: https://simonstepputtis.com/
+  image: stepputtis.webp

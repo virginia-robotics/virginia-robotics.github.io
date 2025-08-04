@@ -4,10 +4,10 @@
     <title>Virginia Robotics</title>
     <description>The Virginia Robotics Symposium (VRS) brings together Virginia robotics researchers. VRS is a one-day event with research talks, poster presentations, and social activities. The goal of VRS is to share exciting ideas and build new connections across the Commonwealth.
 </description>
-    <link>virginia-robotics.github.io/</link>
-    <atom:link href="virginia-robotics.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 31 Jul 2025 17:38:25 -0400</pubDate>
-    <lastBuildDate>Thu, 31 Jul 2025 17:38:25 -0400</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 04 Aug 2025 17:35:01 -0400</pubDate>
+    <lastBuildDate>Mon, 04 Aug 2025 17:35:01 -0400</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
   </channel>

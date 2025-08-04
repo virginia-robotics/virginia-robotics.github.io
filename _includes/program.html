@@ -6,6 +6,8 @@
         VRS will be held as a one-day event with keynote talks, panel debates, poster presentations, and social activities. This year's symposium takes place on November 14th from 9:30AM to 5PM.
       </p>
 
+      <h2>Faculty Speakers</h2>
+
       <table id="speaker-table">
       {% for speaker in site.data.speakers %}
       <tr>
@@ -16,7 +18,7 @@
         </td>
         <td style="vertical-align:middle; width:70%;">
           <center>
-            <h3><a href="{{ speaker.website }}">{{ speaker.name }}</a></h3>
+            <h2><a href="{{ speaker.website }}">{{ speaker.name }}</a></h2>
             <p class="text-muted">{{ speaker.affiliation }}</p>
           </center>
         </td>
