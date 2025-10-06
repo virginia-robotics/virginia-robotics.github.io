@@ -15,34 +15,26 @@
   place: Link Lab
 
 - time: 11:00 AM
-  event: Morning Poster Session
-  place: Link Lab
+  event: Speaker 3
+  place: Link Lab  
 
-- time: 12:00 PM
+- time: 11:25 AM
   event: Lunch
-  place: 
+  place: Boxes Provided
 
 - time: 1:00 PM
-  event: Lab Tours and Demos
-  place: Link Lab
+  event: Poster Session and Lab Tours
+  place: Engineering Buildings
 
-- time: 1:30 PM
-  event: Speaker 3
-  place: Link Lab
-
-- time: 1:55 PM
-  event: Speaker 4
-  place: Link Lab
-
-- time: 2:20 PM
-  event: Afternoon Poster Session
-  place: Link Lab
-
-- time: 3:20 PM 
+- time: 3:00 PM
   event: Afternoon Coffee
   place: Link Lab
 
-- time: 3:45 PM
+- time: 3:20 PM
+  event: Speaker 4
+  place: Link Lab
+
+- time: 3:45 PM 
   event: Speaker 5
   place: Link Lab
 
