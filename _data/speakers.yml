@@ -2,23 +2,29 @@
   affiliation: University of Virginia
   website: https://www.madhurbehl.com/index.html
   image: behl.jpg
+  talk: Bringing AI Up To Speed - <br> Moving Virginia Robotics Autonomously @ 184 mph
+  abstract: Despite decades of advancement, autonomous driving systems have not met the high expectations set by many. What’s missing is physical intelligence - the ability of AI systems to reason, react, and adapt in real time, while operating safely and effectively within the laws of physics. In this talk, I will first examine which hurdles have turned out to be more formidable than expected, and share our research on how to refine testing methodologies to advance the safety of autonomous vehicles. I will then show how high-speed autonomous racing provides a unique proving ground to test the boundaries of AI’s physical capabilities. Leveraging more than a decade of experience in high-speed autonomous racing, particularly with the full-scale Cavalier Autonomous Racing Indy car and the F1tenth platform, I will demonstrate how racing at high speeds and in close proximity to other vehicles exposes unsolved challenges in perception, planning, and control. I will recount our journey from the lab to lap times, and the rigorous engineering required to build a full-scale autonomous racecar from scratch. Despite progress, autonomous racing has yet to match the skill of expert human drivers or master the complexity of dense, multi-car competition; indicating that we still have several more laps to go on our path toward artificial general “driving” intelligence.
+
+- name: Simon Stepputtis
+  affiliation: Virginia Tech
+  website: https://simonstepputtis.com/
+  image: stepputtis.webp
 
 - name: Jana Kosecka
   affiliation: George Mason University
   website: https://volgenau.gmu.edu/profiles/kosecka
   image: kosecka.jpg
-
-- name: Yen-Ling Kuo
-  affiliation: University of Virginia
-  website: https://yenlingkuo.com/
-  image: kuo.jpg
+  talk: Bridging Semantics and Spatial Reasoning - <br> Opportunities and Challenges of <br> Large Vision-Language Models in Robotics
+  abstract: Enabling robots to understand, reason and act in their surrounding environment require reliable and expressive representations of the environment that require different abstraction levels for different tasks. Recent advances in large vision and language models (LVLMs) and vision-language-action (VLA) models have demonstrated impressive generalization capabilities across diverse manipulation and navigation tasks specified in natural language, owing their capacity to encode rich semantic knowledge and commonsense priors. Despite these advancements LVLMs’ exhibit limited spatial awareness and insufficiently precise action grounding in physical environment. I will discuss the opportunities and challenges associated with using LVLMs and discuss how these improved their capabilities can be applied to object search and instruction following for long range navigation tasks. 
 
 - name: Suyi Li
   affiliation: Virginia Tech
   website: https://dare.super.site/
   image: li.webp
-    
-- name: Simon Stepputtis
-  affiliation: Virginia Tech
-  website: https://simonstepputtis.com/
-  image: stepputtis.webp
+  talk: Folding Intelligent Machines - <br> Exploiting Geometry and Mechanics of Origami <br> to Build Intelligence in the Mechanical Domain
+  abstract: Over the past four centuries, origami—the ancient art of paper folding—has evolved from a simple recreational craft into a powerful engineering framework for creating functional materials and robotic systems. This talk will highlight our recent efforts to build origami-inspired robots that can crawl and manipulate like animals, or grow and adapt like trees. In particular, we will explore how the mechanics of origami can be harnessed to embed intelligent behaviors directly into the robot’s physical body. Examples include using multi-ability to sequence earthworm-like peristaltic locomotion without digital controllers, leveraging physical wobbling dynamics to classify objects without cameras, and exploiting collective folding behaviors to grasp irregularly shaped objects. These examples illustrate how geometry and mechanics can open new avenues for computation and robotic control.
+
+- name: Yen-Ling Kuo
+  affiliation: University of Virginia
+  website: https://yenlingkuo.com/
+  image: kuo.jpg
