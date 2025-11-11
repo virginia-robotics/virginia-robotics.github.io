@@ -12,6 +12,7 @@
   image: stepputtis.webp
   talk: Towards Intelligent Collaborative Robots&#58; <br> Joining Neural Inference with Symbolic Reasoning
   talk-long: Towards Intelligent Collaborative Robots&#58; Joining Neural Inference with Symbolic Reasoning
+  abstract: Deep learning has driven remarkable progress in robotics particularly through the use of large foundational models. Despite their success, these models demand extensive computational resources and struggle with the adaptable reasoning needed for intelligent robots to operate in ever-changing human-centric environments. In this talk, I will discuss how neuro-symbolic methods address these challenges by integrating the expressive power of neural networks with the reasoning capabilities of symbolic approaches to advance robot intelligence. This hybrid approach allows for small, yet effective models that leverage symbolic reasoning as an integral part of anticipating human actions, as well as providing a structured approach for zero-shot interaction in new situations and with human partners. Finally, I conclude by outlining how these methods pave the way for intelligent robots in complex, real-world applications while addressing key challenges in life-long learning and efficiency.
 
 - name: Jana Kosecka
   affiliation: George Mason University
@@ -33,3 +34,6 @@
   affiliation: University of Virginia
   website: https://yenlingkuo.com/
   image: kuo.jpg
+  talk: Teaching Robots the Human Way&#58; <br> Learning Grounded Representations to <br> Manipulate Objects and Interact with Humans
+  talk-long: Teaching Robots the Human Way&#58; Learning Grounded Representations to Manipulate Objects and Interact with Humans
+  abstract: For robots to robustly and flexibly interact with humans, they need to learn to plan and execute actions across diverse scenarios. However, in many scenarios, planning actions seems to be effortless for humans but very difficult for robots. Inspired by how humans plan actions, in this talk, I will explore how to build latent representations grounded by behaviors and to associate multimodal semantic representations to support efficient and robust planning and reasoning. I will use my work in robotic manipulation, human-AI collaboration, and theory of mind reasoning to demonstrate these ideas.
