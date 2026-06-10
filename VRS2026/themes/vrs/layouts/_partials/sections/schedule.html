@@ -1,0 +1,26 @@
+<section id="schedule" class="px-4 py-20">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="text-3xl font-bold text-primary">Schedule</h2>
+    {{ $schedulePending := .Params.schedulePending | default "Detailed schedule coming soon." }}
+    {{ with hugo.Data.schedule }}
+    <div class="mt-8 overflow-hidden rounded-lg border border-gray-200">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-primary text-white">
+          <tr><th class="px-4 py-3">Time</th><th class="px-4 py-3">Event</th><th class="px-4 py-3">Location</th></tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          {{ range . }}
+          <tr class="odd:bg-white even:bg-gray-50">
+            <td class="whitespace-nowrap px-4 py-3 font-medium">{{ .time }}</td>
+            <td class="px-4 py-3">{{ .event }}</td>
+            <td class="px-4 py-3 text-muted">{{ .place }}</td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+    {{ else }}
+    <p class="mt-6 text-muted">{{ $schedulePending }}</p>
+    {{ end }}
+  </div>
+</section>

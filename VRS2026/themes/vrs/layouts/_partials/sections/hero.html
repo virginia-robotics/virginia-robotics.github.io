@@ -1,0 +1,29 @@
+{{/* Optional hero background: a real <img> with object-cover (guarantees full
+     coverage at any aspect ratio) + a dark overlay. Original image untouched;
+     it is only resized/recompressed. Falls back to solid bg-primary. */}}
+{{ $img := "" }}
+{{ with .Site.Params.heroImage }}
+  {{ with resources.Get . }}
+    {{ $img = .Resize "2400x webp q72" }}
+  {{ end }}
+{{ end }}
+
+<section id="top"
+  class="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-4 py-28 text-center text-white {{ if not $img }}bg-primary{{ end }}">
+  {{ with $img }}
+  <img src="{{ .RelPermalink }}" alt="" aria-hidden="true" fetchpriority="high"
+       class="absolute inset-0 -z-10 h-full w-full object-cover">
+  <div class="absolute inset-0 -z-10" style="background: linear-gradient(rgba(40,0,20,0.55), rgba(0,0,0,0.68));"></div>
+  {{ with $.Site.Params.heroCredit }}
+  <p class="pointer-events-none absolute bottom-2 right-3 text-[11px] font-normal tracking-wide text-gray-400/80">{{ . }}</p>
+  {{ end }}
+  {{ end }}
+  <div class="mx-auto max-w-4xl">
+    <h1 class="text-3xl font-extrabold leading-tight drop-shadow-sm sm:text-5xl lg:text-6xl">{{ .Params.heroTitle | default .Site.Title }}</h1>
+    <p class="mt-6 text-2xl font-semibold text-accent-light drop-shadow sm:text-3xl">{{ .Site.Params.dateline }}</p>
+    <p class="mt-2 text-lg text-white/90 drop-shadow">{{ .Site.Params.host }} · {{ .Site.Params.location }}</p>
+    {{ with .Site.Params.registerURL }}
+    <a href="{{ . }}" class="mt-8 inline-block rounded-full bg-accent px-8 py-3 font-semibold text-white shadow-lg transition hover:bg-accent-light">Register</a>
+    {{ end }}
+  </div>
+</section>

@@ -1,0 +1,6 @@
+# Sponsors. Same shape as institutions.yml — duplicate a block per sponsor.
+# Logos render under the "Sponsors" heading in the About section.
+# This is one example entry (placeholder logo); replace/add real sponsors.
+# - name: Example Sponsor
+#   logo: /img/placeholder.png
+#   url: https://example.com

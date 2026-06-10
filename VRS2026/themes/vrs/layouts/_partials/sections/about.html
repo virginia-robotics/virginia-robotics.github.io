@@ -1,0 +1,56 @@
+<section id="about" class="px-4 py-20">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="text-3xl font-bold text-primary">About</h2>
+    {{ range .Params.about }}
+    <p class="mt-4 text-lg leading-relaxed text-gray-700 first:mt-6">{{ . | safeHTML }}</p>
+    {{ end }}
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {{ $reg := .Params.registration | default (dict) }}
+      <div class="rounded-lg border border-gray-200 p-6">
+        <h3 class="text-xl font-semibold text-primary">Registration</h3>
+        {{ with .Site.Params.registerURL }}
+        {{ with $reg.note }}<p class="mt-2 text-gray-700">{{ . }}</p>{{ end }}
+        <a href="{{ . }}" class="mt-3 inline-block font-semibold text-accent hover:underline">{{ $reg.cta | default "Register" }}</a>
+        {{ else }}
+        <p class="mt-2 text-muted">{{ $reg.pending | default "Registration will open soon." }}</p>
+        {{ end }}
+      </div>
+      {{ $poster := .Params.poster | default (dict) }}
+      <div class="rounded-lg border border-gray-200 p-6">
+        <h3 class="text-xl font-semibold text-primary">Poster Presentations</h3>
+        {{ with .Site.Params.posterURL }}
+        {{ with $poster.note }}<p class="mt-2 text-gray-700">{{ . }}</p>{{ end }}
+        <a href="{{ . }}" class="mt-3 inline-block font-semibold text-accent hover:underline">{{ $poster.cta | default "Sign up" }}</a>
+        {{ else }}
+        <p class="mt-2 text-muted">{{ $poster.pending | default "Poster sign-ups will open soon." }}</p>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ with hugo.Data.institutions }}
+    <h3 class="mt-12 text-center text-sm font-semibold uppercase tracking-wide text-muted">Organizing Institutions</h3>
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12">
+      {{ range . }}
+      <a href="{{ .url }}" class="block"><img src="{{ .logo }}" alt="{{ .name }}" class="h-12 w-auto max-w-full object-contain opacity-80 transition hover:opacity-100 sm:h-14"></a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ $sponsorPdf := "" }}
+    {{ with .Site.Params.sponsorMenu }}{{ $sponsorPdf = resources.Get . }}{{ end }}
+    {{ if or hugo.Data.sponsors $sponsorPdf }}
+    <h3 class="mt-12 text-center text-sm font-semibold uppercase tracking-wide text-muted">Sponsors</h3>
+    {{ with hugo.Data.sponsors }}
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12">
+      {{ range . }}
+      <a href="{{ .url }}" class="block"><img src="{{ .logo }}" alt="{{ .name }}" class="h-12 w-auto max-w-full object-contain opacity-80 transition hover:opacity-100 sm:h-14"></a>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ with $sponsorPdf }}
+    <p class="mt-6 text-center text-gray-700">{{ $.Params.sponsorsCta | default "Interested in sponsoring?" }} <a href="{{ .RelPermalink }}" target="_blank" rel="noopener" class="font-semibold text-accent hover:underline">Click here</a></p>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>

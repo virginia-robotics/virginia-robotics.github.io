@@ -1,0 +1,8 @@
+# One template speaker showing all available fields. Duplicate this block per
+# speaker. Set `abstract` to reveal the Talks section and its nav item.
+# - name: Jane Doe
+#   affiliation: Example University
+#   website: https://example.edu
+#   image: /img/placeholder.png
+#   talk: "An Example Talk Title: Subtitle Goes Here"
+#   abstract: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec magna tempus mauris sagittis tincidunt. In vestibulum pretium tellus, ac blandit elit finibus quis. Suspendisse a tempor enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum viverra semper ipsum. Pellentesque in sem eu ligula ullamcorper ultricies eu sed ligula. Nunc ut vestibulum nunc. In facilisis tellus ut varius placerat. Maecenas eget mauris pretium, tristique sapien sit amet, venenatis massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla rutrum sapien vitae tincidunt interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus sodales eros, ac faucibus felis blandit a. Proin interdum ultricies lorem, quis facilisis lacus mollis sit amet. Praesent dapibus leo quis velit tempus, vehicula suscipit tellus ullamcorper. Nullam a lobortis diam, vel lacinia sem."

@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"main.scss",
+		"_sass/_schedule.scss"
+	],
+	"sourcesContent": [
+		"@import url(\"bootstrap.min.css\");\n@import url(\"agency.css\");\n@import \"_schedule.scss\"\n",
+		"// Adjust padding for all schedule cells\ntable#schedule-table {\n  td, th {\n    padding-top: 5px;\n    padding-bottom: 5px;\n    padding-left: 0px;\n    padding-right: 100px;\n    vertical-align: top;\n  }\n}\n\n// Style the \"time\" column differently\ntable#schedule-table td:first-child {\n  font-weight: 700;\n}\n\n// Adjust padding for all speaker cells\ntable#speaker-table {\n  td, th {\n    padding-top: 5px;\n    padding-bottom: 5px;\n    padding-left: 0px;\n    padding-right: 0px;\n  }\n}"
+	],
+	"names": [],
+	"mappings": "AAAA,OAAO,CAAC,wBAAI;AACZ,OAAO,CAAC,iBAAI;ACAZ,AACE,KADG,AAAA,eAAe,CAClB,EAAE,EADJ,KAAK,AAAA,eAAe,CACd,EAAE,CAAC,EACL,WAAW,EAAE,GAAG,EAChB,cAAc,EAAE,GAAG,EACnB,YAAY,EAAE,GAAG,EACjB,aAAa,EAAE,KAAK,EACpB,cAAc,EAAE,GAAG,GACpB;;AAIH,AAAA,KAAK,AAAA,eAAe,CAAC,EAAE,CAAC,WAAW,CAAC,EAClC,WAAW,EAAE,GAAG,GACjB;;AAGD,AACE,KADG,AAAA,cAAc,CACjB,EAAE,EADJ,KAAK,AAAA,cAAc,CACb,EAAE,CAAC,EACL,WAAW,EAAE,GAAG,EAChB,cAAc,EAAE,GAAG,EACnB,YAAY,EAAE,GAAG,EACjB,aAAa,EAAE,GAAG,GACnB"
+}

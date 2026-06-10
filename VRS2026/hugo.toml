@@ -1,0 +1,53 @@
+baseURL = 'https://virginia-robotics.github.io/'
+locale = 'en-us'
+title = 'Virginia Robotics Symposium 2026'
+theme = 'vrs'
+
+# Single-page site: no tags/categories/term pages.
+disableKinds = ['taxonomy', 'term', 'rss']
+
+# --- Tailwind CSS v4 build wiring (Hugo docs recipe) ---
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+[[module.mounts]]
+  disableWatch = true
+  source = 'hugo_stats.json'
+  target = 'assets/notwatching/hugo_stats.json'
+
+[params]
+  dateline = 'October 23, 2026'
+  host = 'Virginia Tech'
+  location = 'Blacksburg, VA'
+  tagline = 'A one-day symposium bringing together robotics researchers from across the Commonwealth for research talks, posters, and new collaborations.'
+  registerURL = ''   # set to a form URL to show a Register button
+  posterURL = ''     # set to a form URL to show a Poster sign-up button
+  # Map iframe src. OpenStreetMap embed (no API key) centered on Virginia Tech.
+  # To match the 2025 site exactly: Google Maps → search the venue → Share →
+  # "Embed a map" → copy the iframe src (a .../maps/embed?pb=... URL) → paste here.
+  mapsEmbed = 'https://www.openstreetmap.org/export/embed.html?bbox=-80.4216%2C37.2258%2C-80.4136%2C37.2308&layer=mapnik&marker=37.2283422%2C-80.4176176'
+  sponsorMenu = 'sponsorship/SponsorMenu.pdf'  # assets-relative PDF for the sponsor CTA
+  favicon = '/img/favicons/favicon.ico'
+  logo = '/img/logos/logo.png'            # nav brand image; empty => site title text
+  heroImage = 'img/teaser/robots_3.jpg'   # assets-relative; processed + darkened for the hero
+  heroCredit = 'Doodle by Steven White'   # small credit in the hero's bottom-right corner ('' to hide)
+  archiveURL = '/2025/'
+  archiveLabel = 'VRS 2025 page'
+
+  [params.colors]
+    primary = '#630031'       # VT Chicago Maroon
+    primaryDark = '#4a0025'
+    accent = '#CF4420'        # VT Burnt Orange
+    accentLight = '#e8632f'
+    ink = '#1a1a1a'
+    muted = '#6b7280'

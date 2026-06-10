@@ -1,0 +1,20 @@
+<section id="contact" class="px-4 py-20">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-3xl font-bold text-primary">Contact / Organizers</h2>
+    {{ with .Params.contactIntro }}<p class="mt-6 text-lg text-gray-700">{{ . | safeHTML }}</p>{{ end }}
+    {{ with hugo.Data.organizers }}
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range . }}
+      <div class="flex flex-col items-center rounded-lg border border-gray-200 p-6 text-center">
+        <img src="{{ .image | default "/img/placeholder.png" }}" alt="{{ .name }}" class="h-28 w-28 rounded-full object-cover">
+        <h3 class="mt-4 text-lg font-semibold">
+          {{ if .website }}<a href="{{ .website }}" class="text-primary hover:text-accent">{{ .name }}</a>{{ else }}<span class="text-primary">{{ .name }}</span>{{ end }}
+        </h3>
+        <p class="text-sm text-muted">{{ .affiliation }}</p>
+        {{ with .email }}<a href="mailto:{{ . }}" class="mt-1 text-sm text-accent hover:underline">{{ . }}</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>

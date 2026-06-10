@@ -1,0 +1,9 @@
+- name: Virginia Tech
+  logo: /img/participants/VT-logo.svg
+  url: https://vt.edu
+- name: University of Virginia
+  logo: /img/participants/UVA-logo.svg
+  url: https://virginia.edu
+- name: George Mason University
+  logo: /img/participants/George-Mason-University.png
+  url: https://gmu.edu

@@ -1,0 +1,24 @@
+# Organizing committee. Duplicate a block per organizer.
+- name: Nicola Bezzo
+  affiliation: University of Virginia
+  website: https://www.bezzorobotics.com/
+  image: /img/people/bezzo.jpg
+  email: nb6be@virginia.edu
+
+- name: Dylan Losey
+  affiliation: Virginia Tech
+  website: https://dylanlosey.com/
+  image: /img/people/losey.jpg
+  email: losey@vt.edu
+
+- name: Simon Stepputtis
+  affiliation: Virginia Tech
+  website: https://tealab.ai
+  image: /img/people/stepputtis.webp
+  email: stepputtis@vt.edu
+
+- name: Xuesu Xiao
+  affiliation: George Mason
+  website: https://cs.gmu.edu/~xiao/
+  image: /img/people/xiao.jpg
+  email: xiao@gmu.edu

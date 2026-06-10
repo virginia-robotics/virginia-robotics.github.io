@@ -1,0 +1,26 @@
+# ===== OS / editor =====
+.DS_Store
+*.swp
+*~
+.idea/
+
+# ===== Claude =====
+.claude/
+planning/
+
+# ===== Hugo build artifacts (VRS2026) =====
+# The published site is generated into /docs (committed for GitHub Pages),
+# so /docs itself is intentionally NOT ignored — only the local build outputs.
+VRS2026/public/
+VRS2026/resources/
+VRS2026/.hugo_build.lock
+VRS2026/hugo_stats.json
+VRS2026/node_modules/
+
+# ===== Jekyll build artifacts (VRS2025) =====
+VRS2025/_site/
+VRS2025/.jekyll-cache/
+VRS2025/.jekyll-metadata
+VRS2025/.sass-cache/
+VRS2025/.bundle/
+VRS2025/vendor/
