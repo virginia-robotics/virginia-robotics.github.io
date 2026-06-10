@@ -35,7 +35,7 @@ disableKinds = ['taxonomy', 'term', 'rss']
   # Map iframe src. OpenStreetMap embed (no API key) centered on Virginia Tech.
   # To match the 2025 site exactly: Google Maps → search the venue → Share →
   # "Embed a map" → copy the iframe src (a .../maps/embed?pb=... URL) → paste here.
-  mapsEmbed = 'https://www.openstreetmap.org/export/embed.html?bbox=-80.4216%2C37.2258%2C-80.4136%2C37.2308&layer=mapnik&marker=37.2283422%2C-80.4176176'
+  mapsEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3176.818790815626!2d-80.4200896236434!3d37.22827644345156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884d950cb66bb3db%3A0x7daa3b62530ba8f7!2sGraduate%20Life%20Center%20at%20Virginia%20Tech%20Graduate%20School!5e0!3m2!1sen!2sus!4v1781131858718!5m2!1sen!2sus'
   sponsorMenu = 'sponsorship/SponsorMenu.pdf'  # assets-relative PDF for the sponsor CTA
   favicon = '/img/favicons/favicon.ico'
   logo = '/img/logos/logo.png'            # nav brand image; empty => site title text
