@@ -1,6 +1,8 @@
 # Sponsors. Same shape as institutions.yml — duplicate a block per sponsor.
 # Logos render under the "Sponsors" heading in the About section.
-# This is one example entry (placeholder logo); replace/add real sponsors.
+# Logos are served as-is (no Hugo processing, so SVG works): put the file in
+# static/img/ and reference it with a leading slash.
+# This is one example entry; replace/add real sponsors.
 # - name: Example Sponsor
-#   logo: /img/placeholder.png
+#   logo: /img/sponsors/example.svg
 #   url: https://example.com

@@ -47,4 +47,5 @@ All event-specific content lives in `VRS2026/` — the theme has no hardcoded co
 | Date, host, venue, colors, links, map, hero image, hero credit | `hugo.toml` |
 | Section copy (About, registration text, sponsor CTA, etc.) | `content/_index.md` |
 | Speakers, schedule, organizers, institutions, sponsors | `data/*.yml` |
-| Images | `static/img/` |
+| Portraits (speakers, organizers) | `assets/img/people/` — Hugo crops these to square and converts to WebP, so drop in the full-size original and reference it as `img/people/name.jpg` |
+| Logos, favicons, other images | `static/img/` — served as-is; reference with a leading slash, e.g. `/img/logos/logo.png` |
