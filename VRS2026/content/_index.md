@@ -10,7 +10,7 @@ heroTitle: "Virginia Robotics Symposium"
 # About section — one entry per paragraph
 about:
   - "The Virginia Robotics Symposium (VRS) brings together robotics researchers from across the Commonwealth for a one-day event of research talks, poster presentations, and social activities — building connections and disseminating ideas across institutions."
-  - "With support from our sponsors, we also plan to feature industry presentations, showcasing robotics innovation from companies across the region."
+  # - "With support from our sponsors, we also plan to feature industry presentations, showcasing robotics innovation from companies across the region."
 
 # Registration card (shows note + cta when registerURL is set, else `pending`)
 registration:
@@ -28,15 +28,17 @@ poster:
 sponsorsCta: "Interested in sponsoring and showcasing your products?"
 
 # Program section
-programIntro: "VRS is a one-day event with keynote talks, a panel, poster presentations, industry spotlights, and social activities."
+programIntro: "VRS is a one-day event with keynote talks, a panel, poster presentations, and social activities."
 speakersHeading: "Keynote Speakers"
 speakersPending: "Speakers to be announced."
 
 # Schedule section
 schedulePending: "Detailed schedule coming soon."
 
-# Venue section
-venueIntro: "The 2026 symposium will be hosted at the Virginia Tech Graduate Life Center (GLC) Multipurpose Room at 155 Otey St NW, Blacksburg, VA 24061.<br>Parking will be available close to the venue."
+# Venue section — one entry per paragraph
+venueIntro:
+  - "The 2026 symposium will be hosted at the Virginia Tech Graduate Life Center (GLC) Multipurpose Room at 155 Otey St NW, Blacksburg, VA 24061."
+  - 'Parking is not provided by the symposium and participants are responsible for their own parking. We recommend <a href="https://parking.vt.edu/parking/parkmobile.html" target="_blank" rel="noopener" class="font-semibold text-accent hover:underline">ParkMobile</a> for parking.'
 venuePending: "Venue details to be announced."
 
 # Contact section

@@ -1,10 +1,14 @@
 <section id="venue" class="bg-gray-50 px-4 py-20">
   <div class="mx-auto max-w-5xl">
     <h2 class="text-3xl font-bold text-primary">Venue</h2>
+    {{/* venueIntro may be a single string or a list of paragraphs. */}}
     {{ $venueIntro := .Params.venueIntro | default (printf "The %s symposium will be hosted at the %s in %s." .Site.Params.dateline .Site.Params.venue .Site.Params.location) }}
+    {{ if reflect.IsSlice $venueIntro | not }}{{ $venueIntro = slice $venueIntro }}{{ end }}
     <div class="mt-6 grid gap-8 md:grid-cols-2">
-      <div>
-        <p class="text-lg leading-relaxed text-gray-700">{{ $venueIntro | safeHTML }}</p>
+      <div class="space-y-4">
+        {{ range $venueIntro }}
+        <p class="text-lg leading-relaxed text-gray-700">{{ . | safeHTML }}</p>
+        {{ end }}
         {{ if not .Site.Params.mapsEmbed }}{{ with .Params.venuePending }}<p class="mt-3 text-muted">{{ . }}</p>{{ end }}{{ end }}
       </div>
       {{ with .Site.Params.mapsEmbed }}
