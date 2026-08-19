@@ -20,8 +20,8 @@
   {{ end }}
   <div class="mx-auto max-w-4xl">
     <h1 class="text-3xl font-extrabold leading-tight drop-shadow-sm sm:text-5xl lg:text-6xl">{{ .Params.heroTitle | default .Site.Title }}</h1>
-    <p class="mt-6 text-2xl font-semibold text-accent-light drop-shadow sm:text-3xl">{{ .Site.Params.dateline }}</p>
-    <p class="mt-2 text-lg text-white/90 drop-shadow">{{ .Site.Params.host }} · {{ .Site.Params.location }}</p>
+    <p class="mt-6 text-2xl font-semibold text-accent-light drop-shadow sm:text-3xl">{{ .Site.Params.dateline }}{{ with .Site.Params.timeRange }} · {{ . }}{{ end }}</p>
+    <p class="mt-2 text-lg text-white/90 drop-shadow">{{ .Site.Params.venue }} · {{ .Site.Params.location }}</p>
     {{ with .Site.Params.registerURL }}
     <a href="{{ . }}" class="mt-8 inline-block rounded-full bg-accent px-8 py-3 font-semibold text-white shadow-lg transition hover:bg-accent-light">Register</a>
     {{ end }}

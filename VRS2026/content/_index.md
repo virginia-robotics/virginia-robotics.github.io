@@ -15,13 +15,13 @@ about:
 # Registration card (shows note + cta when registerURL is set, else `pending`)
 registration:
   note: "Attendance is free."
-  cta: "Register here →"
+  cta: "Click here to register!"
   pending: "Registration will open soon."
 
 # Poster card (shows note + cta when posterURL is set, else `pending`)
 poster:
-  note: "Students are encouraged to present."
-  cta: "Sign up →"
+  note: "Students are encouraged to present research posters."
+  cta: "Click here to sign up for a poster presentation!"
   pending: "Poster sign-ups will open soon."
 
 # Sponsors call-to-action (the linked "Click here" goes to the sponsorMenu PDF)
@@ -36,7 +36,7 @@ speakersPending: "Speakers to be announced."
 schedulePending: "Detailed schedule coming soon."
 
 # Venue section
-venueIntro: "The 2026 symposium will be hosted at the The Graduate Life Center (GLC) Multipurpose Room at 155 Otey St NW, Blacksburg, VA 24061.<br>Parking will be available close to the venue."
+venueIntro: "The 2026 symposium will be hosted at the Virginia Tech Graduate Life Center (GLC) Multipurpose Room at 155 Otey St NW, Blacksburg, VA 24061.<br>Parking will be available close to the venue."
 venuePending: "Venue details to be announced."
 
 # Contact section

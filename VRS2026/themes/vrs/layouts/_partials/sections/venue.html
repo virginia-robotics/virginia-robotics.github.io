@@ -1,7 +1,7 @@
 <section id="venue" class="bg-gray-50 px-4 py-20">
   <div class="mx-auto max-w-5xl">
     <h2 class="text-3xl font-bold text-primary">Venue</h2>
-    {{ $venueIntro := .Params.venueIntro | default (printf "The %s symposium will be hosted by %s in %s." .Site.Params.dateline .Site.Params.host .Site.Params.location) }}
+    {{ $venueIntro := .Params.venueIntro | default (printf "The %s symposium will be hosted at the %s in %s." .Site.Params.dateline .Site.Params.venue .Site.Params.location) }}
     <div class="mt-6 grid gap-8 md:grid-cols-2">
       <div>
         <p class="text-lg leading-relaxed text-gray-700">{{ $venueIntro | safeHTML }}</p>
