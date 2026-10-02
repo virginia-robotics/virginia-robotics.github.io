@@ -25,6 +25,9 @@
   affiliation: University of Virginia
   website: https://engineering.virginia.edu/labs-groups/wearlab
   image: img/people/yesun.webp
+  talk: "Flexible Wearable Electronics and Robotics: Towards Ubiquitous Monitoring and Assistance"
+  abstract: "Wearable technologies offer the potential to bring continuous health monitoring and personalized physical assistance into everyday life. Realizing this potential requires systems that integrate comfortably with the human body, reliably interpret physiological and movement signals, and respond to users’ needs. The recent progress in smart fabrics, textiles, and garments and their manufacturing techniques has opened the door for next-generation wearable electronics with fully flexible systems on cloth. The controllable structures and the potential of automatic design-to-manufacturing translation of textile materials also inspire researchers to explore new textile actuators and create softer and more compliant wearable robotics. The first part of the talk will introduce textile electronics that transform everyday fabrics into functional platforms for sensing and human-robot interaction. A central focus is a programmable design-to-fabrication approach that translates electronic functions into machine-executable embroidery patterns, enabling the integration of conductive interconnects, electronic components, and sensors within textile structures. The second part will introduce a new class of wearable robots and soft exosuits for movement assistance, with an emphasis on understanding human motion intention and coordinating robotic support. EEG-based brain-computer interfaces will illustrate how neural signals can connect intended movement with wearable assistance."
+
 - name: Tariq Iqbal 
   affiliation: University of Virginia
   website: https://www.collabrobotics.com/
