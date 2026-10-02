@@ -12,7 +12,17 @@
           {{ range . }}
           <tr class="odd:bg-white even:bg-gray-50">
             <td class="whitespace-nowrap px-4 py-3 font-medium">{{ .time }}</td>
-            <td class="px-4 py-3">{{ .event }}</td>
+            <td class="px-4 py-3">
+              {{ with .speaker }}
+                {{ $name := . }}
+                <span class="font-medium">{{ $name }}</span>
+                {{ range where hugo.Data.speakers "name" $name }}
+                  {{ with .talk }}<span class="block italic text-gray-700">{{ . }}</span>{{ end }}
+                {{ end }}
+              {{ else }}
+                {{ .event }}
+              {{ end }}
+            </td>
             <td class="px-4 py-3 text-muted">{{ .place }}</td>
           </tr>
           {{ end }}

@@ -4,9 +4,6 @@
     (dict "id" "schedule" "label" "Schedule")
     (dict "id" "venue"    "label" "Venue")
     (dict "id" "contact"  "label" "Contact") }}
-{{ $hasTalks := false }}
-{{ range hugo.Data.speakers }}{{ if .abstract }}{{ $hasTalks = true }}{{ end }}{{ end }}
-{{ if $hasTalks }}{{ $nav = $nav | append (dict "id" "talks" "label" "Talks") }}{{ end }}
 
 <header class="fixed inset-x-0 top-0 z-50 bg-primary text-white shadow-md">
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">

@@ -1,5 +1,10 @@
 # Schedule rows. Mirrors the 2025 running order; all sessions are in the GLC.
-# Speaker slots are placeholders until the speaker list is finalized.
+# Speaker slots are placeholders until the speaker list is finalized. To assign
+# a slot, replace `event` with `speaker`, matching a `name` in speakers.yml —
+# the row then shows the speaker's name and talk title:
+# - time: "10:10 AM"
+#   speaker: "Jane Doe"
+#   place: "GLC"
 
 - time: "9:30 AM"
   event: "Sign In and Morning Coffee"
@@ -10,7 +15,7 @@
   place: "GLC"
 
 - time: "10:10 AM"
-  event: "Speaker 1"
+  speaker: "Noel Naughton"
   place: "GLC"
 
 - time: "10:35 AM"
