@@ -16,9 +16,9 @@
               {{ with .speaker }}
                 {{ $name := . }}
                 <span class="font-medium">{{ $name }}</span>
-                {{ range where hugo.Data.speakers "name" $name }}
-                  {{ with .talk }}<span class="block italic text-gray-700">{{ . }}</span>{{ end }}
-                {{ end }}
+                {{ $talk := "" }}
+                {{ range where hugo.Data.speakers "name" $name }}{{ with .talk }}{{ $talk = . }}{{ end }}{{ end }}
+                {{ with $talk }}<span class="block italic text-gray-700">{{ . }}</span>{{ else }}<span class="block italic text-muted">Title: TBD</span>{{ end }}
               {{ else }}
                 {{ .event }}
               {{ end }}
