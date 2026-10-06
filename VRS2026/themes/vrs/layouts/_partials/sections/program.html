@@ -19,7 +19,11 @@
         <div class="min-w-0 flex-1 sm:border-l sm:border-gray-200 sm:pl-6">
           {{ if or .talk .abstract }}
           {{ with .talk }}<p class="text-lg font-semibold text-gray-900">{{ . }}</p>{{ end }}
-          {{ with .abstract }}<p class="mt-2 text-sm leading-relaxed text-gray-700">{{ . | safeHTML }}</p>{{ end }}
+          {{ with .abstract }}
+          <div class="mt-2 space-y-3 text-sm leading-relaxed text-gray-700">
+            {{ range split (strings.TrimSpace .) "\n\n" }}<p>{{ . | safeHTML }}</p>{{ end }}
+          </div>
+          {{ end }}
           {{ else }}
           <p class="text-sm text-muted">Talk title and abstract to be announced.</p>
           {{ end }}

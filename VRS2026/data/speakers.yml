@@ -8,11 +8,17 @@
 #   image: img/people/jane-doe.jpg
 #   talk: "An Example Talk Title: Subtitle Goes Here"
 #   abstract: "Full abstract text, shown below the talk title."
+#   # Multi-paragraph abstracts: use a `|` block with a blank line between paragraphs.
 
 - name: Gregory Stein
   affiliation: George Mason University
   website: https://people.cs.gmu.edu/~gjstein/
   image: img/people/stein.jpg
+  talk: "Anticipatory Planning: Integrating Learning and Planning to Enable More Forward-Thinking Long-Lived Mobile Robots"
+  abstract: |
+    The next generation of household robots will be long-lived, operating over deployments lasting hours or days. However, most mobile robots are problematically myopic: existing robot task planning strategies typically focus only on completing an immediate objective as quickly as possible, yet since the environment persists, such strategies often render the environment more difficult to use as time goes on and introduce side effects that impede later tasks. Instead, if robots are to enter homes or hospitals and act as assistive companions over lengthy deployments, they must strive to maximize their long-lived utility and so must have the capacity to interleave quick, reliable, and unobtrusive completion of their assigned objectives with proactive action, preparation for future tasks, and maintenance of the long-term usability of the environment, an aim for which myopic planning is insufficient.
+
+    In this talk, I will discuss my lab's recent progress towards what we call anticipatory planning, in which estimates of expected future cost—the expected impact of the robot's actions on the uncertain future—to inform planning to guide the robot towards proactive and forward-looking behaviors that jointly prioritize long-term usability of the environment with execution of its assigned objectives. I will showcase both completed and ongoing work that shows the potential of this approach to enable more capable and effective long-lived mobile robots and speculate on the broad future of this line of research.
 
 - name: Noel Naughton
   affiliation: Virginia Tech
