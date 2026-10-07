@@ -28,8 +28,8 @@
   place: "GLC"
 
 - time: "11:25 AM"
-  event: "Lunch"
-  place: "GLC (Boxes Provided)"
+  event: "Lunch (Boxes Provided)"
+  place: "GLC"
 
 - time: "1:00 PM"
   event: "Poster Session"

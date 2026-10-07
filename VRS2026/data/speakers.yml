@@ -38,6 +38,8 @@
   affiliation: University of Virginia
   website: https://www.collabrobotics.com/
   image: img/people/iqbal.webp
+  talk: "Toward Adaptive Collaboration in Human-Robot Teams"
+  abstract: "As robots increasingly operate alongside people in complex and dynamic environments, effective collaboration requires them to coordinate not only with other robots, but also with multiple human teammates whose goals, roles, and behaviors may evolve over time. In this talk, I will present our research on developing reliable and adaptive collaborative robotic systems for multi-human-robot teams. I will discuss approaches that combine decentralized coordination, symbolic reasoning, plan verification, and adaptive execution to support collaborative task completion in dynamic environments. Through simulation and physical robot experiments, I will illustrate how robots can coordinate interdependent actions, monitor task progress, and respond to unexpected interruptions through targeted recovery and replanning. I will conclude by discussing how these capabilities can be extended to teams in which robots must also reason about human intent, interaction, and trust to support effective collaboration."
   
 - name: Cameron Nowzari
   affiliation: George Mason University
