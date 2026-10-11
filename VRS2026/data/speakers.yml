@@ -45,3 +45,14 @@
   affiliation: George Mason University
   website: https://people-ece.vse.gmu.edu/~cnowzari/
   image: img/people/nowzari.avif
+  talk: "Optimal Control is Not Good Enough for Robot Swarms"
+  abstract: |
+    What if the biggest obstacle to scalable robot swarms is our obsession with optimization and control?
+
+    Control theory and computer science have spent decades learning how to make engineered systems increasingly precise, optimal, and predictable. But a swarm is not simply a multi-robot system with a very large N. As the number of agents N grows, global state becomes inaccessible, communication becomes intermittent, models become wrong, failures become normal, and the cost of coordinating everyone with everyone becomes overwhelming. In highly dynamic and/or adversarial environments, continuing to search for the best action can lead to decision paralysis when almost any reasonable action would be better than none at all.
+
+    Biology suggests a radically different mode of "control" for swarms. A beekeeper does not compute trajectories for thousands of bees, assign tasks to individual workers, or continuously optimize the state of the colony. Instead, the environment is shaped so that local behaviors, interactions, and feedback naturally produce useful collective outcomes. The individual agents largely control themselves. What is “controlled” are the conditions under which self-organization occurs.
+
+    This talk argues that optimal control is not the same as good enough. Rather than asking how to command, coordinate, or optimize every agent, we should ask: What local rules reliably produce useful global behaviors? What environmental variables, interaction structures, or boundary conditions can we manipulate to steer an entire population? Which collective variables actually need to be regulated and how little information and intervention are required to keep the swarm inside a region of acceptable behavior?
+
+    Drawing on distributed control, computer science, event-triggered systems, collective behavior, and cybernetics, I will explore a shift from controlling agents to controlling the environmental conditions for emergence. The challenge for swarm robotics is therefore not to extend multi-robot optimization to increasing N. It is to develop a different theory of control for systems of systems of systems (of systems...) in which useful behavior is self-organized rather than commanded. To control a million robots, we may first have to stop trying to control a million robots.
