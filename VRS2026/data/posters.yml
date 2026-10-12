@@ -1,0 +1,204 @@
+# Poster list, in registration order (poster number = position in this list).
+# Generated from 'Poster Registration 2026.csv' at the repo root; emails and
+# timestamps are intentionally left out. Edit freely — this file is what the
+# /posters/ page renders.
+
+- title: "Improving Neuro-Symbolic Policies with MEMO"
+  presenter: "Benjamin Christie"
+  pi: "Dylan Losey"
+  institution: "Virginia Tech"
+
+- title: "EpiTransfer: Monocular Depth Estimation for Navigation"
+  presenter: "Diksha Aggarwal"
+  pi: "Kevin Kochersberger"
+  institution: "Virginia Tech"
+
+- title: "Learning from multimodal corrections"
+  presenter: "Jaewoo Cho"
+  pi: "Dylan Losey"
+  institution: "Virginia Tech"
+
+- title: "LMP"
+  presenter: "Yinlong Dai"
+  pi: "Dylan Losey"
+  institution: "Virginia Tech"
+
+- title: "Correcting Neuro-Symbolic Policies with Human Gestures"
+  presenter: "Mohammad Bararjanianbahnamiri"
+  pi: "Dylan Losey"
+  institution: "Virginia Tech"
+
+- title: "Optimizing Task-Oriented Grasps via a Digital Twin"
+  presenter: "Daniel Evans"
+  pi: "Dylan Losey"
+  institution: "Virginia Tech"
+
+- title: "Can LLMs Prove Robotic Path Planning Optimality? A Benchmark for Research-Level Algorithm Verification"
+  presenter: "Zhengbang Yang"
+  pi: "Zhuangdi Zhu"
+  institution: "George Mason University"
+
+- title: "Courteous Anticipation: Improving long-lived online task planning in shared spaces"
+  presenter: "Md Ridwan Hossain Talukder"
+  pi: "Gregory Stein"
+  institution: "George Mason University"
+
+- title: "Learning to Adapt in Multi-Agent Systems: Meta Multi-agent Reinforcement Learning"
+  presenter: "Huiwen Yan"
+  pi: "Mushuang Liu"
+  institution: "Virginia Tech"
+
+- title: "Error Propagation across Machine Learning Models in Modular Autonomous Driving Stack​"
+  presenter: "Daehyun Lee"
+  pi: "Lishan Yang"
+  institution: "George Mason University"
+
+- title: "Characterizing the saliency of natural landmarks"
+  presenter: "Michael Goldsworthy"
+  pi: "Rolf Mueller"
+  institution: "Virginia Tech"
+
+- title: "NMPC for the Quadfoil UAS"
+  presenter: "Jordan Massey"
+  pi: "Kevin Kochersberger"
+  institution: "Virginia Tech"
+
+- title: "Can robots have emotions of empathy and can they be used for specialised therapy."
+  presenter: "Batul Idris"
+  pi: ""
+  institution: "George Mason University"
+
+- title: "Measuring Natural Frequencies in Collaborating Industrial Robots Performing Pellet Fed Extrusion Using Experimental Modal Analysis"
+  presenter: "Mahati Sri Kuram"
+  pi: "Erik Komendera"
+  institution: "Virginia Tech"
+
+- title: "ADMM-Based Safety-Critical Distributed NMPC for Cooperative Transportation by Quadrupedal Robots"
+  presenter: "Ruturaj Sambhus"
+  pi: "Kaveh Akbari Hamed"
+  institution: "Virginia Tech"
+
+- title: "Robust Model Predictive Control of a Tremor-Suppression Exoskeleton under Tremor-Induced Disturbances"
+  presenter: "Taizoon Chunawala"
+  pi: "Kaveh Akbari Hamed"
+  institution: "Virginia Tech"
+
+- title: "Impostor in the Swarm: Learning Strategic Environment-Model Deception in Cooperative Multi-Robot Navigation"
+  presenter: "Suramya Pokharel"
+  pi: "Eyuphan Bulut"
+  institution: "Virginia Commonwealth University"
+
+- title: "A Control Barrier Function Framework for Collaboration in Heterogeneous Robotic Systems"
+  presenter: "Patrick Sherman"
+  pi: "Nicola Bezzo"
+  institution: "University of Virginia"
+
+- title: "Clustering of Natural Navigation Landmarks"
+  presenter: "Balamurugan Ramachandran"
+  pi: "Rolf Mueller"
+  institution: "Virginia Tech"
+
+- title: "Agent-agnostic Calibrated Beliefs for Hierarchical Robot Planning"
+  presenter: "Xinyuan Liang"
+  pi: "Qi Heng Ho"
+  institution: "Virginia Tech"
+
+- title: "Design, Propulsion Characterization, and Onboard Vision-Based Navigation of a Batoid-Inspired Underwater Robot"
+  presenter: "Qianqiao Diao"
+  pi: "Joseph Zhu"
+  institution: "University of Virginia"
+
+- title: "Affordance-Driven LLM Robot Planning through Environment Abstraction with Iterative Validation and Refinement"
+  presenter: "Woosung Kim"
+  pi: "Nicola Bezzo"
+  institution: "University of Virginia"
+
+- title: "Ultrasound-incorporated tracking of octopus arm 3D kinematics"
+  presenter: "Bokun Zheng"
+  pi: "Noel Naughton"
+  institution: "Virginia Tech"
+
+- title: "Automatic LiDAR–Camera Extrinsic Calibration for Marine Vessels"
+  presenter: "Youngchul Choi"
+  pi: "Mingi Jeong"
+  institution: "Virginia Tech"
+
+- title: "Strategic Evasion Using Multi-Hypothesis Control Barrier Functions"
+  presenter: "Sagar Shah"
+  pi: "Isaac Weintraub"
+  institution: "University of Virginia"
+
+- title: "ADMM-based Distributed MPC for team of quadruped robots"
+  presenter: "Yicheng Zeng"
+  pi: "Kaveh Akbari Hamed"
+  institution: "Virginia Tech"
+
+- title: "Physical and Neural Reservoirs for Soft Arm Control"
+  presenter: "Apoorva Khairnar"
+  pi: "Noel Naughton"
+  institution: "Virginia Tech"
+
+- title: "VECTOR: Decentralized Task Planning with Verification and Adaptive Execution for Multi-Robot Systems"
+  presenter: "Shaid Hasan and Sujan Sarker"
+  pi: "Tariq Iqbal"
+  institution: "University of Virginia"
+
+- title: "Impact of Adaptive Feedback in Multimodal Human-Agent Interaction"
+  presenter: "Shaid Hasan"
+  pi: "Tariq Iqbal"
+  institution: "University of Virginia"
+
+- title: "Adaptive Robust POMDP for Safe Reach-Avoid Planning Under Robot Faults"
+  presenter: "Yan-Shuo Li"
+  pi: "Qi Heng Ho"
+  institution: "Virginia Tech"
+
+- title: "Design, Modeling, and Validation of an Extendable Tendon-Driven Robot for Long-Term Deployment in Congested and Evolving Outdoor Environments"
+  presenter: "Ziyang Zhou"
+  pi: "Suyi Li"
+  institution: "Virginia Tech"
+
+- title: "Shake-to-Learn: Dynamic Interrogation of Hidden Object Physics for Robotic Manipulation with Physical Reservoir Computing"
+  presenter: "Wen Sin Lor"
+  pi: "Suyi Li"
+  institution: "Virginia Tech"
+
+- title: "Mechanical Intelligence for Robust Interaction: From Programmed Folding to Collective Grasping"
+  presenter: "Patrick Knowles"
+  pi: "Suyi Li"
+  institution: "Virginia Tech"
+
+- title: "Leveraging Kirigami to fabricate conformable interfaces"
+  presenter: "Jyotshna Bali"
+  pi: "Suyi Li"
+  institution: "Virginia Tech"
+
+- title: "Multi-Rate Mixture-of-Experts Liquid Neural Networks for Safe Robotic Manipulation"
+  presenter: "Shilong Zong"
+  pi: ""
+  institution: "Virginia Tech"
+
+- title: "TBD-VLA: Temporal Block Diffusion Vision Language Action Model"
+  presenter: "Sung-Wook Lee"
+  pi: "Yen-Ling Kuo"
+  institution: "University of Virginia"
+
+- title: "Frequency-aware decomposition learning for sensorless wrench estimation in vibration-rich robotic contact"
+  presenter: "Hyeonbeen Lee"
+  pi: "Simon Stepputtis"
+  institution: "Virginia Tech"
+
+- title: "Learning to Nudge: A Scalable Barrier Function Framework for Safe Robot Interaction in Dense Clutter"
+  presenter: "Haixin Jin"
+  pi: "Simon Stepputtis"
+  institution: "Virginia Tech"
+
+- title: "Decomposing Residual Dynamics to Identify Nonlinear Mechanisms"
+  presenter: "Sriya Karambor Chakravarty"
+  pi: "Simon Stepputtis"
+  institution: "Virginia Tech"
+
+- title: "A \"Mixture of Algorithms\" Framework for Automatic Collision Avoidance in Autonomous Ships"
+  presenter: "Sheikh A. Tahmid"
+  pi: "Mingi Jeong"
+  institution: "Virginia Tech"

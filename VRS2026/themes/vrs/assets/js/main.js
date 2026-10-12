@@ -14,3 +14,26 @@ if (toggle && mobile) {
     })
   );
 }
+
+// Poster search (/posters/): filter rows by title, presenter, or PI.
+// Every whitespace-separated term must appear somewhere in the row.
+const search = document.getElementById("poster-search");
+const rows = Array.from(document.querySelectorAll(".poster-row"));
+if (search && rows.length) {
+  const empty = document.getElementById("poster-empty");
+  const count = document.getElementById("poster-count");
+  const apply = () => {
+    const terms = search.value.toLowerCase().split(/\s+/).filter(Boolean);
+    let shown = 0;
+    rows.forEach((row) => {
+      const hay = row.dataset.search;
+      const hit = terms.every((t) => hay.includes(t));
+      row.classList.toggle("hidden", !hit);
+      if (hit) shown++;
+    });
+    if (empty) empty.classList.toggle("hidden", shown > 0);
+    if (count) count.textContent = terms.length ? `Showing ${shown} of ${rows.length} posters` : `${rows.length} posters`;
+  };
+  search.addEventListener("input", apply);
+  apply();
+}

@@ -9,7 +9,7 @@
 {{ end }}
 
 <section id="top"
-  class="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-4 py-28 text-center text-white {{ if not $img }}bg-primary{{ end }}">
+  class="relative flex {{ if .IsHome }}min-h-[80vh]{{ else }}min-h-[50vh]{{ end }} flex-col items-center justify-center overflow-hidden px-4 py-28 text-center text-white {{ if not $img }}bg-primary{{ end }}">
   {{ with $img }}
   <img src="{{ .RelPermalink }}" alt="" aria-hidden="true" fetchpriority="high"
        class="absolute inset-0 -z-10 h-full w-full object-cover">
@@ -20,10 +20,12 @@
   {{ end }}
   <div class="mx-auto max-w-4xl">
     <h1 class="text-3xl font-extrabold leading-tight drop-shadow-sm sm:text-5xl lg:text-6xl">{{ .Params.heroTitle | default .Site.Title }}</h1>
-    <p class="mt-6 text-2xl font-semibold text-accent-light drop-shadow sm:text-3xl">{{ .Site.Params.dateline }}{{ with .Site.Params.timeRange }} · {{ . }}{{ end }}</p>
-    <p class="mt-2 text-lg text-white/90 drop-shadow">{{ .Site.Params.venue }} · {{ .Site.Params.location }}</p>
-    {{ with .Site.Params.registerURL }}
+    {{/* Subpages (e.g. /posters/) can override the two lines under the headline via
+         front matter: heroSubtitle and heroDetail. */}}
+    <p class="mt-6 text-2xl font-semibold text-accent-light drop-shadow sm:text-3xl">{{ .Params.heroSubtitle | default (print .Site.Params.dateline (cond (ne .Site.Params.timeRange "") (print " · " .Site.Params.timeRange) "")) }}</p>
+    <p class="mt-2 text-lg text-white/90 drop-shadow">{{ .Params.heroDetail | default (print .Site.Params.venue " · " .Site.Params.location) }}</p>
+    {{ if .IsHome }}{{ with .Site.Params.registerURL }}
     <a href="{{ . }}" class="mt-8 inline-block rounded-full bg-accent px-8 py-3 font-semibold text-white shadow-lg transition hover:bg-accent-light">Register</a>
-    {{ end }}
+    {{ end }}{{ end }}
   </div>
 </section>

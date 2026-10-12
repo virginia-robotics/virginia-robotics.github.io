@@ -1,10 +1,4 @@
 # Organizing committee. Duplicate a block per organizer.
-- name: Nicola Bezzo
-  affiliation: University of Virginia
-  website: https://www.bezzorobotics.com/
-  image: img/people/bezzo.jpg
-  email: nb6be@virginia.edu
-
 - name: Dylan Losey
   affiliation: Virginia Tech
   website: https://dylanlosey.com/
@@ -16,6 +10,12 @@
   website: https://tealab.ai
   image: img/people/stepputtis.webp
   email: stepputtis@vt.edu
+
+- name: Nicola Bezzo
+  affiliation: University of Virginia
+  website: https://www.bezzorobotics.com/
+  image: img/people/bezzo.jpg
+  email: nb6be@virginia.edu
 
 - name: Xuesu Xiao
   affiliation: George Mason

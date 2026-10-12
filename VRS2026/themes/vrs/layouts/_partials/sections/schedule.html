@@ -13,12 +13,14 @@
           <tr class="odd:bg-white even:bg-gray-50">
             <td class="whitespace-nowrap px-4 py-3 font-medium">{{ .time }}</td>
             <td class="px-4 py-3">
-              {{ with .speaker }}
-                {{ $name := . }}
+              {{ if .speaker }}
+                {{ $name := .speaker }}
                 <span class="font-medium">{{ $name }}</span>
                 {{ $talk := "" }}
                 {{ range where hugo.Data.speakers "name" $name }}{{ with .talk }}{{ $talk = . }}{{ end }}{{ end }}
                 {{ with $talk }}<span class="block italic text-gray-700">{{ . }}</span>{{ else }}<span class="block italic text-muted">Title: TBD</span>{{ end }}
+              {{ else if .link }}
+                <a href="{{ .link | relURL }}" class="font-medium text-primary underline decoration-accent/60 underline-offset-2 hover:text-accent">{{ .event }}</a>
               {{ else }}
                 {{ .event }}
               {{ end }}

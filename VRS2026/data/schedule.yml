@@ -6,6 +6,7 @@
 # - time: "10:10 AM"
 #   speaker: "Jane Doe"
 #   place: "GLC"
+# An optional `link` turns the event name into a link (e.g. link: /posters/).
 
 - time: "9:30 AM"
   event: "Sign In and Morning Coffee"
@@ -33,6 +34,7 @@
 
 - time: "1:00 PM"
   event: "Poster Session"
+  link: /posters/
   place: "GLC"
 
 - time: "3:00 PM"
