@@ -73,12 +73,12 @@
   pi: "Erik Komendera"
   institution: "Virginia Tech"
 
-- title: "ADMM-Based Safety-Critical Distributed NMPC for Cooperative Transportation by Quadrupedal Robots"
+- title: "A Nonlinear MPC Framework for Loco-Manipulation of Quadrupedal Robots with Non-Negligible Manipulator Dynamics"
   presenter: "Ruturaj Sambhus"
   pi: "Kaveh Akbari Hamed"
   institution: "Virginia Tech"
 
-- title: "Robust Model Predictive Control of a Tremor-Suppression Exoskeleton under Tremor-Induced Disturbances"
+- title: "Robust Model Predictive Control of a Tremor-Suppression Exoskeleton"
   presenter: "Taizoon Chunawala"
   pi: "Kaveh Akbari Hamed"
   institution: "Virginia Tech"
@@ -128,7 +128,7 @@
   pi: "Isaac Weintraub"
   institution: "University of Virginia"
 
-- title: "ADMM-based Distributed MPC for team of quadruped robots"
+- title: "Safety-Critical NMPCs for Safe Quadrupedal Locomotion"
   presenter: "Yicheng Zeng"
   pi: "Kaveh Akbari Hamed"
   institution: "Virginia Tech"
@@ -201,4 +201,54 @@
 - title: "A \"Mixture of Algorithms\" Framework for Automatic Collision Avoidance in Autonomous Ships"
   presenter: "Sheikh A. Tahmid"
   pi: "Mingi Jeong"
+  institution: "Virginia Tech"
+
+- title: "Chiropter"
+  presenter: "Sam Heller"
+  pi: "Rolf Mueller"
+  institution: "Virginia Tech"
+
+- title: "Lost Person Model Based Reinforcement Learning for Autonomous Search and Rescue"
+  presenter: "Bryson Howell"
+  pi: "Ryan Williams"
+  institution: "Virginia Tech"
+
+- title: "Deep Reinforcement Learning for Adaptive Pinna Control in Bioinspired Sonar"
+  presenter: "Adam Hinson"
+  pi: "Rolf Mueller"
+  institution: "Virginia Tech"
+
+- title: "Visual Inertial Odometry for Autonomous Surface Vehicles in Maritime Environment"
+  presenter: "Roun Lee"
+  pi: "Mingi Jeong"
+  institution: "Virginia Tech"
+
+- title: "IMPRIMIS: Self-Driving Ground Vehicle Real-Time Obstacle & Lane Detection for Adaptive Path Planning"
+  presenter: "Ayaan Mushtaq"
+  pi: "Ravi Hadimani"
+  institution: "Virginia Commonwealth University"
+
+- title: "IMPRIMIS: A Novel Wireless Motor Control and Regenerative Braking System for Autonomous Ground Vehicles"
+  presenter: "Kush Patel"
+  pi: "Ravi Hadimani"
+  institution: "Virginia Commonwealth University"
+
+- title: "Universal Robotic Controller (URC): A Wearable Controller for Natural-Motion Teleoperation of Robotic Systems"
+  presenter: "Angelina Anderson"
+  pi: "Ravi Hadimani"
+  institution: "Virginia Commonwealth University"
+
+- title: "Development of Remotely Operated Industrial Robotic System using Brain and Muscle Activity"
+  presenter: "Akshita Ramesh"
+  pi: "Ravi Hadimani"
+  institution: "Virginia Commonwealth University"
+
+- title: "Camera Sees Far, LiDAR Measures Near: Sensor Asymmetry in Maritime 3D Perception"
+  presenter: "Yi Liu"
+  pi: "Mingi Jeong"
+  institution: "Virginia Tech"
+
+- title: "Flapping Flight Drone Inspired by Bats"
+  presenter: "Helen Catan"
+  pi: "Rolf Mueller"
   institution: "Virginia Tech"
