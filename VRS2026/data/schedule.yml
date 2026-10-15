@@ -9,7 +9,7 @@
 # An optional `link` turns the event name into a link (e.g. link: /posters/).
 
 - time: "9:30 AM"
-  event: "Sign In and Morning Coffee"
+  event: "Sign In and Morning Coffee (set up posters)"
   place: "GLC"
 
 - time: "10:00 AM"
@@ -58,5 +58,5 @@
   place: "GLC"
 
 - time: "5:00 PM"
-  event: "End of Event"
+  event: "End of Event (take down posters)"
   place: "GLC"

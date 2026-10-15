@@ -18,11 +18,11 @@ registration:
   cta: "Click here to register!"
   pending: "Registration will open soon."
 
-# Poster card (shows note + cta when posterURL is set, else `pending`)
+# Poster card (shows note + cta when posterURL is set, else `pending`; HTML allowed in `pending`)
 poster:
   note: "Students are encouraged to present research posters."
   cta: "Click here to sign up for a poster presentation!"
-  pending: "Poster sign-ups will open soon."
+  pending: 'Posters are at capacity. Check out our posters <a href="/posters/" class="font-semibold text-accent hover:underline">here</a>.'
 
 # Sponsors call-to-action (the linked "Click here" goes to the sponsorMenu PDF)
 sponsorsCta: "Interested in sponsoring and showcasing your products?"
