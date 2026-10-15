@@ -252,3 +252,23 @@
   presenter: "Helen Catan"
   pi: "Rolf Mueller"
   institution: "Virginia Tech"
+
+- title: "VISNAV: Heterogeneous Robot Dataset for VISual NAVigation"
+  presenter: "Alexandyr Card"
+  pi: "Xuesu Xiao"
+  institution: "George Mason University"
+
+- title: "Stay on TRACT: Tactile-Guided Tension Regulation for Bimanual Cable Insertion"
+  presenter: "Sara Dubey"
+  pi: "Simon Stepputtis"
+  institution: "Virginia Tech"
+
+- title: "Bacteria-Powered Biohybrid Microrobots with Tunable Cargo Loading"
+  presenter: "Jongbok Lee"
+  pi: "Bahareh Behkam"
+  institution: "Virginia Tech"
+
+- title: "Self-Powered Computing: A Step Toward Autonomous Robots"
+  presenter: "Ardalan Kahak"
+  pi: "Suyi Li"
+  institution: "Virginia Tech"
