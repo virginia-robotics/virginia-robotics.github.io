@@ -38,8 +38,18 @@ schedulePending: "Detailed schedule coming soon."
 # Venue section — one entry per paragraph
 venueIntro:
   - "The 2026 symposium will be hosted at the Virginia Tech Graduate Life Center (GLC) Multipurpose Room at 155 Otey St NW, Blacksburg, VA 24061."
-  - 'Parking is not provided by the symposium and participants are responsible for their own parking. We recommend <a href="https://parking.vt.edu/parking/parkmobile.html" target="_blank" rel="noopener" class="font-semibold text-accent hover:underline">ParkMobile</a> for parking.'
+  - 'Parking is not provided by the symposium and participants are responsible for their own parking. We recommend <a href="https://parking.vt.edu/parking/parkmobile.html" target="_blank" rel="noopener" class="font-semibold text-accent hover:underline">ParkMobile</a> for parking. Additionally, the Kent Square and North End parking garages, shown below, are both a short walk from the GLC.'
 venuePending: "Venue details to be announced."
+# Parking maps shown next to the venue map. `embed` is a keyless Google Maps
+# embed URL (https://maps.google.com/maps?q=<place>&output=embed); `link` is
+# what the "Open in Google Maps" caption points to.
+parking:
+  - name: "Kent Square Parking Garage"
+    embed: "https://maps.google.com/maps?q=Kent+Square+Parking+Garage,+Blacksburg,+VA&z=16&output=embed"
+    link: "https://share.google/UWcXDID20umNeILz9"
+  - name: "North End Parking Garage"
+    embed: "https://maps.google.com/maps?q=North+End+Parking+Garage,+Blacksburg,+VA&z=16&output=embed"
+    link: "https://share.google/NMaOrrtNJb1JKJQh2"
 
 # Contact section
 contactIntro: "For more information, please reach out to the organizers below."
