@@ -35,6 +35,17 @@ speakersPending: "Speakers to be announced."
 # Schedule section
 schedulePending: "Detailed schedule coming soon."
 
+# Live Q&A banner (shown above the schedule). Rendered only while the visitor's
+# local date is between `start` and `end` (inclusive, YYYY-MM-DD); builds made
+# after `end` omit it entirely. Remove `url` to disable.
+slido:
+  url: "https://app.sli.do/event/dotApbGykjyvp7rgraubPp"
+  start: "2026-10-23"
+  end: "2026-10-23"
+  heading: "Have a question for a speaker or the panel?"
+  text: "Submit and upvote questions live on Slido throughout the day."
+  cta: "Ask a question on Slido"
+
 # Venue section — one entry per paragraph
 venueIntro:
   - "The 2026 symposium will be hosted at the Virginia Tech Graduate Life Center (GLC) Multipurpose Room at 155 Otey St NW, Blacksburg, VA 24061."

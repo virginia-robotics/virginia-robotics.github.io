@@ -1,0 +1,20 @@
+{{/* Live Q&A banner. Emitted only if the build date is on or before `end`;
+     main.js then reveals it when the visitor's local date is within
+     [start, end]. See `slido` in content/_index.md. */}}
+{{ with .Params.slido }}
+{{ if and .url (or (not .end) (le (now.Format "2006-01-02") .end)) }}
+<section id="qa" class="hidden px-4 pt-20 pb-4" data-start="{{ .start }}" data-end="{{ .end }}">
+  <div class="mx-auto max-w-4xl">
+    <div class="flex flex-col items-start gap-5 rounded-lg bg-accent p-6 text-white shadow-lg sm:flex-row sm:items-center sm:justify-between sm:p-8">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wide text-white/80">Live Q&amp;A</p>
+        <h3 class="mt-1 text-xl font-bold sm:text-2xl">{{ .heading | default "Have a question?" }}</h3>
+        {{ with .text }}<p class="mt-2 text-white/90">{{ . }}</p>{{ end }}
+      </div>
+      <a href="{{ .url }}" target="_blank" rel="noopener"
+         class="shrink-0 rounded-full bg-white px-6 py-3 font-semibold text-accent shadow transition hover:bg-gray-100">{{ .cta | default "Open Slido" }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

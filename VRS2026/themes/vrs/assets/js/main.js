@@ -37,3 +37,13 @@ if (search && rows.length) {
   search.addEventListener("input", apply);
   apply();
 }
+
+// Live Q&A banner: show only while the visitor's local date is within
+// [data-start, data-end] (inclusive, YYYY-MM-DD).
+const qa = document.getElementById("qa");
+if (qa) {
+  const d = new Date();
+  const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const { start, end } = qa.dataset;
+  if ((!start || today >= start) && (!end || today <= end)) qa.classList.remove("hidden");
+}
