@@ -193,8 +193,8 @@
   pi: "Simon Stepputtis"
   institution: "Virginia Tech"
 
-- title: "Decomposing Residual Dynamics to Identify Nonlinear Mechanisms"
-  presenter: "Sriya Karambor Chakravarty"
+- title: "Learning Tool-Task Affordances with Disentangled Uncertainty"
+  presenter: "Sirui Zhan"
   pi: "Simon Stepputtis"
   institution: "Virginia Tech"
 
@@ -273,7 +273,4 @@
   pi: "Suyi Li"
   institution: "Virginia Tech"
 
-- title: "Learning Tool-Task Affordances with Disentangled Uncertainty"
-  presenter: "Sirui Zhan"
-  pi: "Simon Stepputtis"
-  institution: "Virginia Tech"
+
