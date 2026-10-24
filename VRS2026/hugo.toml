@@ -6,6 +6,18 @@ theme = 'vrs'
 # Single-page site: no tags/categories/term pages.
 disableKinds = ['taxonomy', 'term', 'rss']
 
+# --- Poster Session page (/posters/) ---
+# Set postersPage to true to publish the page again; false removes the page
+# from the build and drops every link to it (nav, schedule, poster card).
+# The two settings below must stay in sync: the cascade is what actually stops
+# Hugo from writing the page, the param is what the templates check for links.
+[[cascade]]
+  [cascade.build]
+    render = 'never'
+    list = 'never'
+  [cascade._target]
+    path = '/posters'
+
 # --- Tailwind CSS v4 build wiring (Hugo docs recipe) ---
 [build]
   [build.buildStats]
@@ -26,6 +38,7 @@ disableKinds = ['taxonomy', 'term', 'rss']
   target = 'assets/notwatching/hugo_stats.json'
 
 [params]
+  postersPage = false   # see the Poster Session block near the top
   dateline = 'October 23, 2026'
   timeRange = '9:30 AM – 5:00 PM'   # appended to the dateline in the hero ('' to hide)
   venue = 'Virginia Tech Graduate Life Center (GLC)'

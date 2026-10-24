@@ -18,8 +18,10 @@ registration:
   cta: "Click here to register!"
   pending: "Registration will open soon."
 
-# Poster card (shows note + cta when posterURL is set, else `pending`; HTML allowed in `pending`)
+# Poster card (shows note + cta when posterURL is set, else `pending`; HTML allowed
+# in `pending`). `closed` replaces both while postersPage is false in hugo.toml.
 poster:
+  closed: "Thank you to everyone who presented a poster at VRS 2026!"
   note: "Students are encouraged to present research posters."
   cta: "Click here to sign up for a poster presentation!"
   pending: 'Posters are at capacity. Check out our posters <a href="/posters/" class="font-semibold text-accent hover:underline">here</a>.'

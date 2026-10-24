@@ -19,7 +19,7 @@
                 {{ $talk := "" }}
                 {{ range where hugo.Data.speakers "name" $name }}{{ with .talk }}{{ $talk = . }}{{ end }}{{ end }}
                 {{ with $talk }}<span class="block italic text-gray-700">{{ . }}</span>{{ else }}<span class="block italic text-muted">Title: TBD</span>{{ end }}
-              {{ else if .link }}
+              {{ else if and .link (or $.Site.Params.postersPage (not (hasPrefix .link "/posters"))) }}
                 <a href="{{ .link | relURL }}" class="font-medium text-primary underline decoration-accent/60 underline-offset-2 hover:text-accent">{{ .event }}</a>
               {{ else }}
                 {{ .event }}
