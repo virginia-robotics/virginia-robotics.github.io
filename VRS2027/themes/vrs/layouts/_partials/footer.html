@@ -1,0 +1,11 @@
+<footer class="border-t border-gray-200 bg-gray-50 py-8 text-sm text-muted">
+  <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 sm:flex-row sm:justify-between">
+    <p>© {{ now.Year }} Virginia Robotics Symposium</p>
+    {{ with .Site.Params.archiveURL }}
+    <a href="{{ . }}" class="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-white px-5 py-2 font-semibold text-primary shadow-sm transition hover:border-primary hover:bg-primary hover:text-white">
+      {{ $.Site.Params.archiveLabel | default "Previous year" }}
+      <span aria-hidden="true">→</span>
+    </a>
+    {{ end }}
+  </div>
+</footer>

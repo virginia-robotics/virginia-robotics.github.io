@@ -6,14 +6,15 @@ Website for the Virginia Robotics Symposium (VRS).
 
 | Path | What it is |
 | --- | --- |
-| `VRS2026/` | The current site — built with [Hugo](https://gohugo.io/) + Tailwind CSS. Reusable theme in `themes/vrs/`; content in `content/`, `hugo.toml`, and `data/`. |
-| `VRS2025/` | The previous (2025) site — a Jekyll project, kept as an archive and served at `/2025/`. |
+| `VRS2027/` | The current site — built with [Hugo](https://gohugo.io/) + Tailwind CSS. Reusable theme in `themes/vrs/`; content in `content/`, `hugo.toml`, and `data/`. Also carries the archived sites as static files (`static/2026/`, `static/2025/`). |
+| `VRS2026/` | The 2026 site (Hugo, same theme), kept as an archive and served at `/2026/`. Its build output is checked into `VRS2027/static/2026/`. |
+| `VRS2025/` | The 2025 site — a Jekyll project, kept as an archive and served at `/2025/` (`VRS2027/static/2025/`). |
 | `docs/` | The built site that GitHub Pages publishes (Pages serves the `main` branch `/docs` folder). Generated — see below. |
 | `planning/` | Design spec and implementation plan (not published). |
 
 ## Build & publish
 
-The published site lives in `docs/`. To regenerate it, run this **from inside the `VRS2026/` folder**:
+The published site lives in `docs/`. To regenerate it, run this **from inside the `VRS2027/` folder**:
 
 ```bash
 hugo -d ../docs --cleanDestinationDir
@@ -21,16 +22,25 @@ hugo -d ../docs --cleanDestinationDir
 
 This builds the Hugo site (compiling Tailwind CSS through Hugo's asset pipeline) and writes the output to the repo-root `docs/` folder. Commit `docs/` and push — GitHub Pages serves it.
 
-> **First time only** — install the Tailwind build dependencies (requires [Node.js](https://nodejs.org/)), from inside `VRS2026/`:
+> **First time only** — install the Tailwind build dependencies (requires [Node.js](https://nodejs.org/)), from inside `VRS2027/`:
 > ```bash
 > npm install
 > ```
+> If `hugo server` later complains that `tailwindcss` "is not a Node.js script", OneDrive has flattened the symlinks in `node_modules/.bin` — run `npm ci` to restore them.
+
+### Updating the archived 2026 site
+
+The 2026 site is served from `VRS2027/static/2026/`. If it ever needs a change, edit `VRS2026/` (its `baseURL` is already set to `/2026/`) and rebuild it into that folder, then rebuild the main site as above:
+
+```bash
+cd VRS2026 && hugo -d ../VRS2027/static/2026 --cleanDestinationDir
+```
 
 A `.nojekyll` file is included in the output so GitHub Pages serves the Hugo build as-is (without running Jekyll over it).
 
 ## Local preview
 
-From inside `VRS2026/`:
+From inside `VRS2027/`:
 
 ```bash
 hugo server
@@ -40,7 +50,7 @@ Then open <http://localhost:1313/>. Changes reload live.
 
 ## Editing content
 
-All event-specific content lives in `VRS2026/` — the theme has no hardcoded copy:
+All event-specific content lives in `VRS2027/` — the theme has no hardcoded copy:
 
 | To change… | Edit… |
 | --- | --- |

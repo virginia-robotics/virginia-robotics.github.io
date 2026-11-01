@@ -8,14 +8,17 @@
 .claude/
 planning/
 
-# ===== Hugo build artifacts (VRS2026) =====
+# ===== Hugo build artifacts (VRS2026, VRS2027) =====
 # The published site is generated into /docs (committed for GitHub Pages),
 # so /docs itself is intentionally NOT ignored — only the local build outputs.
-VRS2026/public/
-VRS2026/resources/
-VRS2026/.hugo_build.lock
-VRS2026/hugo_stats.json
-VRS2026/node_modules/
+VRS202[67]/public/
+VRS202[67]/resources/
+VRS202[67]/.hugo_build.lock
+VRS202[67]/hugo_stats.json
+VRS202[67]/node_modules/
+
+# Poster registration exports (contain emails)
+Poster Registration *.csv
 
 # ===== Jekyll build artifacts (VRS2025) =====
 VRS2025/_site/

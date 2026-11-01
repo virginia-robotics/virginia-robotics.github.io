@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+/* Brand colors are injected as --vrs-* custom properties by baseof.html and
+   mapped here so Tailwind utilities (bg-primary, text-accent, ...) resolve to
+   the values configured in hugo.toml [params.colors]. */
+@theme {
+  --color-primary: var(--vrs-primary);
+  --color-primary-dark: var(--vrs-primary-dark);
+  --color-accent: var(--vrs-accent);
+  --color-accent-light: var(--vrs-accent-light);
+  --color-ink: var(--vrs-ink);
+  --color-muted: var(--vrs-muted);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchored sections so the fixed nav doesn't cover headings. */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+}

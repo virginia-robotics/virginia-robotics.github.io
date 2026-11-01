@@ -1,4 +1,5 @@
-baseURL = 'https://virginia-robotics.github.io/'
+# Archived: the 2026 site is served under /2026/ from VRS2027/static/2026 (see README).
+baseURL = 'https://virginia-robotics.github.io/2026/'
 locale = 'en-us'
 title = 'Virginia Robotics Symposium 2026'
 theme = 'vrs'
@@ -44,7 +45,7 @@ disableKinds = ['taxonomy', 'term', 'rss']
   venue = 'Virginia Tech Graduate Life Center (GLC)'
   location = 'Blacksburg, VA'
   tagline = 'A one-day symposium bringing together robotics researchers from across the Commonwealth for research talks, posters, and new collaborations.'
-  registerURL = 'https://forms.gle/qQn6Cozz1WDzbxAn8'   # set to a form URL to show a Register button
+  registerURL = ''   # event is over; set to a form URL to show a Register button again
   posterURL = ''     # set to a form URL to show a Poster sign-up button ('' => shows poster.pending from _index.md)
   # Map iframe src. OpenStreetMap embed (no API key) centered on Virginia Tech.
   # To match the 2025 site exactly: Google Maps → search the venue → Share →

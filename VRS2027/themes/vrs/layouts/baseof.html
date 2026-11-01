@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.Lang "en" }}">
+{{ partial "head.html" . }}
+{{ $c := .Site.Params.colors }}
+<style>
+  :root {
+    --vrs-primary: {{ $c.primary | default "#630031" }};
+    --vrs-primary-dark: {{ $c.primaryDark | default "#4a0025" }};
+    --vrs-accent: {{ $c.accent | default "#CF4420" }};
+    --vrs-accent-light: {{ $c.accentLight | default "#e8632f" }};
+    --vrs-ink: {{ $c.ink | default "#1a1a1a" }};
+    --vrs-muted: {{ $c.muted | default "#6b7280" }};
+  }
+</style>
+<body class="bg-white text-ink antialiased">
+  {{ partial "header.html" . }}
+  {{ block "main" . }}{{ end }}
+  {{ partial "footer.html" . }}
+  <script src="{{ (resources.Get "js/main.js" | minify).RelPermalink }}" defer></script>
+</body>
+</html>

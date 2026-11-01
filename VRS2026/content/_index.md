@@ -6,6 +6,8 @@ title: "Virginia Robotics Symposium 2026"
 
 # Hero headline (the date / host / location beneath it come from hugo.toml params)
 heroTitle: "Virginia Robotics Symposium"
+# Shown in the hero in place of the Register button while registerURL is empty
+heroNote: "Thank you for attending VRS 2026!"
 
 # About section — one entry per paragraph
 about:
@@ -16,7 +18,7 @@ about:
 registration:
   note: "Attendance is free."
   cta: "Click here to register!"
-  pending: "Registration will open soon."
+  pending: "Thank you for attending VRS 2026! Registration for this event has closed."
 
 # Poster card (shows note + cta when posterURL is set, else `pending`; HTML allowed
 # in `pending`). `closed` replaces both while postersPage is false in hugo.toml.

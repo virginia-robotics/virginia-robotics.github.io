@@ -1,0 +1,31 @@
+{{/* Square portrait, resized by Hugo's image pipeline.
+
+     Params:
+       image  assets-relative path, e.g. "img/people/bezzo.jpg" (a leading "/"
+              is tolerated so data files can use either form)
+       alt    alt text
+       px     rendered CSS size in pixels; the file is generated at 2x for
+              retina screens (default 128)
+       class  classes for the <img>
+
+     A path Hugo can't resolve as an asset — an external URL, or a file still
+     sitting in static/ — is emitted unprocessed so nothing silently vanishes. */}}
+
+{{ $px := .px | default 128 }}
+{{ $src := .image | default "img/placeholder.png" }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+
+{{ $res := "" }}
+{{ if not (urls.Parse $src).Scheme }}
+  {{ $res = resources.Get (strings.TrimPrefix "/" $src) }}
+{{ end }}
+
+{{ with $res }}
+  {{ $n := mul $px 2 }}
+  {{ with .Fill (printf "%dx%d webp q80 Smart" $n $n) }}
+  <img src="{{ .RelPermalink }}" width="{{ $px }}" height="{{ $px }}" alt="{{ $alt }}" loading="lazy" class="{{ $class }}">
+  {{ end }}
+{{ else }}
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" class="{{ $class }}">
+{{ end }}

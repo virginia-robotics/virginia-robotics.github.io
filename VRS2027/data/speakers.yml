@@ -1,0 +1,12 @@
+# Speakers. Each gets a row: photo, name and affiliation on the left, `talk`
+# title and `abstract` on the right. Both are optional — omit until confirmed.
+# Portraits go in assets/img/people/.
+#
+# Template — duplicate this block per speaker:
+# - name: Jane Doe
+#   affiliation: Example University
+#   website: https://example.edu
+#   image: img/people/jane-doe.jpg
+#   talk: "An Example Talk Title: Subtitle Goes Here"
+#   abstract: "Full abstract text, shown below the talk title."
+#   # Multi-paragraph abstracts: use a `|` block with a blank line between paragraphs.

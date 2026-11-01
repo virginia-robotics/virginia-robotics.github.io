@@ -1,0 +1,62 @@
+baseURL = 'https://virginia-robotics.github.io/'
+locale = 'en-us'
+title = 'Virginia Robotics Symposium 2027'
+theme = 'vrs'
+
+# Single-page site: no tags/categories/term pages.
+disableKinds = ['taxonomy', 'term', 'rss']
+
+# --- Tailwind CSS v4 build wiring (Hugo docs recipe) ---
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+[[module.mounts]]
+  disableWatch = true
+  source = 'hugo_stats.json'
+  target = 'assets/notwatching/hugo_stats.json'
+
+[params]
+  # Sections not yet ready for 2027. Remove an entry here to publish that
+  # section (and its nav item). Possible values: about, program, schedule,
+  # venue, contact.
+  hiddenSections = ['program', 'schedule', 'venue']
+  postersPage = false   # no poster page yet (content/posters.md is absent anyway)
+
+  dateline = 'November 5, 2027'
+  timeRange = ''                        # appended to the dateline in the hero ('' to hide)
+  venue = 'George Mason University'
+  location = 'Fairfax, VA'
+  tagline = 'A one-day symposium bringing together robotics researchers from across the Commonwealth for research talks, posters, and new collaborations.'
+  registerURL = ''   # set to a form URL to show a Register button in the hero
+  posterURL = ''     # poster sign-up form URL (the card itself is enabled in content/_index.md)
+  mapsEmbed = ''     # venue map iframe src — Google Maps → Share → "Embed a map"
+  mapsLink = ''      # "Open in Google Maps" target for the venue map
+  sponsorMenu = ''   # assets-relative PDF for the sponsor CTA ('' to hide the Sponsors block)
+  favicon = '/img/favicons/favicon.ico'
+  logo = '/img/logos/logo.png'          # nav brand image; empty => site title text
+  heroImage = ''                        # assets-relative photo; '' => brand-color gradient
+  heroCredit = ''                       # small credit in the hero's bottom-right corner ('' to hide)
+  archiveURL = '/2026/'
+  archiveLabel = 'VRS 2026 page'
+
+  # George Mason University brand colors (brand.gmu.edu/brand-guide/brand-colors).
+  # Mason Gold is used where it sits on green (hero subtitle, nav hover); the
+  # brand guide does not approve gold on white or white on gold, so links and
+  # buttons use Mason Red, GMU's approved accent color.
+  [params.colors]
+    primary = '#005239'       # Mason Green
+    primaryDark = '#003a28'
+    accent = '#CC4824'        # Mason Red (approved accent)
+    accentLight = '#FFC733'   # Mason Gold
+    ink = '#333333'           # Logo Black
+    muted = '#727579'         # Mason Gray

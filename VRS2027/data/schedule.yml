@@ -1,0 +1,11 @@
+# Schedule rows. Leave empty until the program is set — the section is hidden
+# via hiddenSections in hugo.toml anyway.
+#
+# - time: "9:30 AM"
+#   event: "Sign In and Morning Coffee"
+#   place: "Room TBD"
+# A `speaker` row looks the name up in speakers.yml and shows the talk title:
+# - time: "10:10 AM"
+#   speaker: "Jane Doe"
+#   place: "Room TBD"
+# An optional `link` turns the event name into a link (e.g. link: /posters/).

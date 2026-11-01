@@ -1,0 +1,40 @@
+{{/* Optional hero background: a real <img> with object-cover (guarantees full
+     coverage at any aspect ratio) + a dark overlay. Original image untouched;
+     it is only resized/recompressed. With no heroImage, a gradient built from
+     the brand colors (primary-dark → primary, with an accent-light glow). */}}
+{{ $img := "" }}
+{{ with .Site.Params.heroImage }}
+  {{ with resources.Get . }}
+    {{ $img = .Resize "2400x webp q72" }}
+  {{ end }}
+{{ end }}
+
+<section id="top"
+  class="relative flex {{ if .IsHome }}min-h-[80vh]{{ else }}min-h-[50vh]{{ end }} flex-col items-center justify-center overflow-hidden px-4 py-28 text-center text-white {{ if not $img }}bg-primary{{ end }}"
+  {{ if not $img }}style="background:
+    radial-gradient(ellipse 60% 55% at 85% 15%, color-mix(in srgb, var(--vrs-accent-light) 28%, transparent), transparent),
+    radial-gradient(ellipse 50% 60% at 10% 90%, color-mix(in srgb, var(--vrs-accent-light) 14%, transparent), transparent),
+    linear-gradient(160deg, var(--vrs-primary-dark) 0%, var(--vrs-primary) 60%, var(--vrs-primary-dark) 100%);"{{ end }}>
+  {{ with $img }}
+  <img src="{{ .RelPermalink }}" alt="" aria-hidden="true" fetchpriority="high"
+       class="absolute inset-0 -z-10 h-full w-full object-cover">
+  <div class="absolute inset-0 -z-10" style="background: linear-gradient(rgba(40,0,20,0.55), rgba(0,0,0,0.68));"></div>
+  {{ with $.Site.Params.heroCredit }}
+  <p class="pointer-events-none absolute bottom-2 right-3 text-[11px] font-normal tracking-wide text-gray-400/80">{{ . }}</p>
+  {{ end }}
+  {{ end }}
+  <div class="mx-auto max-w-4xl">
+    <h1 class="text-3xl font-extrabold leading-tight drop-shadow-sm sm:text-5xl lg:text-6xl">{{ .Params.heroTitle | default .Site.Title }}</h1>
+    {{/* Subpages (e.g. /posters/) can override the two lines under the headline via
+         front matter: heroSubtitle and heroDetail. */}}
+    <p class="mt-6 text-2xl font-semibold text-accent-light drop-shadow sm:text-3xl">{{ .Params.heroSubtitle | default (print .Site.Params.dateline (cond (ne .Site.Params.timeRange "") (print " · " .Site.Params.timeRange) "")) }}</p>
+    <p class="mt-2 text-lg text-white/90 drop-shadow">{{ .Params.heroDetail | default (print .Site.Params.venue " · " .Site.Params.location) }}</p>
+    {{/* Register button while registerURL is set; otherwise an optional
+         heroNote from the front matter (e.g. "Thank you for attending!"). */}}
+    {{ if .IsHome }}{{ with .Site.Params.registerURL }}
+    <a href="{{ . }}" class="mt-8 inline-block rounded-full bg-accent px-8 py-3 font-semibold text-white shadow-lg transition hover:bg-accent-light">Register</a>
+    {{ else }}{{ with $.Params.heroNote }}
+    <p class="mt-8 inline-block rounded-full border border-white/40 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur-sm">{{ . }}</p>
+    {{ end }}{{ end }}{{ end }}
+  </div>
+</section>

@@ -6,13 +6,19 @@
     (dict "id" "schedule" "label" "Schedule")
     (dict "id" "venue"    "label" "Venue")
     (dict "id" "contact"  "label" "Contact") }}
+{{/* params.hiddenSections (e.g. ['program','schedule','venue']) removes
+     sections from the page and from this nav. */}}
+{{ $hidden := .Site.Params.hiddenSections | default slice }}
+{{ $kept := slice }}
+{{ range $nav }}{{ if not (in $hidden .id) }}{{ $kept = $kept | append . }}{{ end }}{{ end }}
+{{ $nav = $kept }}
 {{ if .Site.Params.postersPage }}{{ $nav = $nav | append (dict "href" (relURL "/posters/") "label" "Poster Session") }}{{ end }}
 
 <header class="fixed inset-x-0 top-0 z-50 bg-primary text-white shadow-md">
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
     <a href="{{ $home }}#top" class="flex items-center">
       {{ with .Site.Params.logo }}
-      <img src="{{ . }}" alt="{{ $.Site.Title }}" class="h-7 w-auto rounded-md bg-white px-2.5 py-1.5 sm:h-8">
+      <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $.Site.Title }}" class="h-7 w-auto rounded-md bg-white px-2.5 py-1.5 sm:h-8">
       {{ else }}
       <span class="text-lg font-extrabold tracking-tight">{{ .Site.Title }}</span>
       {{ end }}

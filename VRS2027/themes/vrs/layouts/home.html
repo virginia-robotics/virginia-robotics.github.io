@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ $hidden := .Site.Params.hiddenSections | default slice }}
+  {{ partial "sections/hero.html" . }}
+  {{ if not (in $hidden "about") }}{{ partial "sections/about.html" . }}{{ end }}
+  {{ if not (in $hidden "program") }}{{ partial "sections/program.html" . }}{{ end }}
+  {{ if not (in $hidden "schedule") }}
+    {{ partial "sections/slido.html" . }}
+    {{ partial "sections/schedule.html" . }}
+  {{ end }}
+  {{ if not (in $hidden "venue") }}{{ partial "sections/venue.html" . }}{{ end }}
+  {{ if not (in $hidden "contact") }}{{ partial "sections/contact.html" . }}{{ end }}
+{{ end }}
