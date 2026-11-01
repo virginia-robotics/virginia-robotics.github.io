@@ -59,7 +59,7 @@ enableGitInfo = true     # <lastmod> in sitemap.xml comes from the last commit
   # 1200x630 link-preview image (Open Graph / Twitter card). Regenerate with
   # tools/make-social-card.py after changing the date or hero image.
   socialImage = '/img/social-card.jpg'
-  registerURL = 'https://forms.gle/qQn6Cozz1WDzbxAn8'   # set to a form URL to show a Register button
+  registerURL = ''   # set to a form URL to show a Register button ('' => hides it and shows registration.pending from _index.md)
   posterURL = ''     # set to a form URL to show a Poster sign-up button ('' => shows poster.pending from _index.md)
   # Map iframe src. OpenStreetMap embed (no API key) centered on Virginia Tech.
   # To match the 2025 site exactly: Google Maps → search the venue → Share →

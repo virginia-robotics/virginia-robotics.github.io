@@ -12,16 +12,17 @@ about:
   - "The Virginia Robotics Symposium (VRS) brings together robotics researchers from across the Commonwealth for a one-day event of research talks, poster presentations, and social activities — building connections and disseminating ideas across institutions."
   # - "With support from our sponsors, we also plan to feature industry presentations, showcasing robotics innovation from companies across the region."
 
-# Registration card (shows note + cta when registerURL is set, else `pending`)
+# Registration card (shows note + cta when registerURL is set in hugo.toml, else
+# `pending`; HTML allowed in `pending`).
 registration:
   note: "Attendance is free."
   cta: "Click here to register!"
-  pending: "Registration will open soon."
+  pending: "Attendance is free. <b>Registration has closed.</b>"
 
 # Poster card (shows note + cta when posterURL is set, else `pending`; HTML allowed
 # in `pending`). `closed` replaces both while postersPage is false in hugo.toml.
 poster:
-  closed: "Thank you to everyone who presented a poster at VRS 2026!"
+  closed: "Students are encouraged to present research posters. <b>Poster sign-ups have closed.</b>"
   note: "Students are encouraged to present research posters."
   cta: "Click here to sign up for a poster presentation!"
   pending: 'Posters are at capacity. Check out our posters <a href="/posters/" class="font-semibold text-accent hover:underline">here</a>.'
