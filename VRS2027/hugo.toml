@@ -5,16 +5,22 @@ theme = 'vrs'
 
 # Single-page site: no tags/categories/term pages.
 disableKinds = ['taxonomy', 'term', 'rss']
+enableRobotsTXT = true   # layouts/robots.txt (advertises the sitemap)
+enableGitInfo = true     # <lastmod> in sitemap.xml comes from the last commit
+disableHugoGeneratorInject = true   # no <meta name=generator> in the head
 
 # --- Tailwind CSS v4 build wiring (Hugo docs recipe) ---
+# Hugo runs the Tailwind CLI (node_modules/.bin/tailwindcss, or a standalone
+# `tailwindcss` on PATH) as an external program, which must be allowed here.
+[security]
+  [security.exec]
+    allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^node$', '^npx$', '^postcss$', '^tailwindcss$']
+
 [build]
   [build.buildStats]
     enable = true
   [[build.cachebusters]]
     source = 'assets/notwatching/hugo_stats\.json'
-    target = 'css'
-  [[build.cachebusters]]
-    source = '(postcss|tailwind)\.config\.js'
     target = 'css'
 
 [[module.mounts]]
@@ -32,22 +38,55 @@ disableKinds = ['taxonomy', 'term', 'rss']
   hiddenSections = ['program', 'schedule', 'venue']
   postersPage = false   # no poster page yet (content/posters.md is absent anyway)
 
+  # --- Event state ---
+  # Flip eventPast to true once the symposium has happened. It switches the
+  # About section to the pastNote in content/_index.md and drops the ticket
+  # "offer" from the structured data.
+  eventPast = false
+  shortName = 'VRS 2027'   # used in a few headings ("VRS 2027 Program")
   dateline = 'November 5, 2027'
+  # Machine-readable event times (ISO 8601 with UTC offset) — used only for the
+  # schema.org Event data in the page head. Add the times once they are set.
+  eventStart = '2027-11-05'
+  eventEnd = '2027-11-05'
   timeRange = ''                        # appended to the dateline in the hero ('' to hide)
   venue = 'George Mason University'
   location = 'Fairfax, VA'
   tagline = 'A one-day symposium bringing together robotics researchers from across the Commonwealth for research talks, posters, and new collaborations.'
+  # Year-free name of the site as a whole (og:site_name, WebSite schema).
+  siteName = 'Virginia Robotics Symposium'
+  # Browser-tab / search-result title for the home page. The <h1> in the hero
+  # still comes from `title` at the top of this file, so this can be longer.
+  seoTitle = 'Virginia Robotics Symposium 2027 | George Mason University, Fairfax VA'
+  # Search-engine / link-preview description. Keep it under 160 characters.
+  description = 'Virginia Robotics Symposium (VRS) 2027: free one-day robotics research symposium at George Mason University, Fairfax VA, on November 5, 2027. Talks and posters.'
+  # Google Search Console ownership proof (HTML-tag method); emitted on every page.
+  googleSiteVerification = 'sGoynNc3VXdLs6h5VHokEsNqs4PeFVIKR69K-nQclh8'
+  # 1200x630 link-preview image (Open Graph / Twitter card). Generate with
+  # tools/make-social-card.py (needs Pillow) once there is a hero image, then
+  # set this to '/img/social-card.jpg'. Empty => plain summary card.
+  socialImage = ''
   registerURL = ''   # set to a form URL to show a Register button in the hero
   posterURL = ''     # poster sign-up form URL (the card itself is enabled in content/_index.md)
   mapsEmbed = ''     # venue map iframe src — Google Maps → Share → "Embed a map"
   mapsLink = ''      # "Open in Google Maps" target for the venue map
   sponsorMenu = ''   # assets-relative PDF for the sponsor CTA ('' to hide the Sponsors block)
   favicon = '/img/favicons/favicon.ico'
-  logo = '/img/logos/logo.png'          # nav brand image; empty => site title text
+  logo = 'img/logos/logo.png'           # assets-relative nav brand image, resized to display size; empty => site title text
   heroImage = ''                        # assets-relative photo; '' => brand-color gradient
   heroCredit = ''                       # small credit in the hero's bottom-right corner ('' to hide)
   archiveURL = '/2026/'
+  archiveLastmod = '2026-11-01'   # update when static/2026/ changes (sitemap <lastmod>)
   archiveLabel = 'VRS 2026 page'
+
+  # Street address of the venue, for the schema.org Event data. Refine once
+  # the building is known.
+  [params.address]
+    street = '4400 University Dr'
+    city = 'Fairfax'
+    region = 'VA'
+    postal = '22030'
+    country = 'US'
 
   # George Mason University brand colors (brand.gmu.edu/brand-guide/brand-colors).
   # Mason Gold is used where it sits on green (hero subtitle, nav hover); the

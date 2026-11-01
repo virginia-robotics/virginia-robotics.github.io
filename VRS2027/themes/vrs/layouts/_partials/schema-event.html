@@ -1,0 +1,45 @@
+{{/* schema.org Event structured data (Google event rich results).
+     Everything comes from hugo.toml [params]: eventStart / eventEnd (ISO 8601
+     with offset), venue, [params.address], registerURL, socialImage, eventPast.
+     schema.org has no "finished" status, so a past event keeps EventScheduled
+     with its real dates (that is what Google expects); only the free-ticket
+     offer is dropped once eventPast is true. */}}
+{{- $p := .Site.Params }}
+{{- $desc := $p.description | default $p.tagline | default .Site.Title }}
+{{- $loc := dict "@type" "Place" "name" $p.venue }}
+{{- with $p.address }}
+  {{- $addr := dict "@type" "PostalAddress" "addressCountry" (.country | default "US") }}
+  {{- with .street }}{{ $addr = merge $addr (dict "streetAddress" .) }}{{ end }}
+  {{- with .city }}{{ $addr = merge $addr (dict "addressLocality" .) }}{{ end }}
+  {{- with .region }}{{ $addr = merge $addr (dict "addressRegion" .) }}{{ end }}
+  {{- with .postal }}{{ $addr = merge $addr (dict "postalCode" .) }}{{ end }}
+  {{- $loc = merge $loc (dict "address" $addr) }}
+{{- end }}
+{{- /* Organizer: the site itself plus the host institutions (data/institutions.yml). */}}
+{{- $organizers := slice (dict "@type" "Organization" "name" ($p.siteName | default .Site.Title) "url" .Site.BaseURL) }}
+{{- range hugo.Data.institutions }}{{ $organizers = $organizers | append (dict "@type" "CollegeOrUniversity" "name" .name "url" .url) }}{{ end }}
+{{- $ev := dict
+  "@context" "https://schema.org"
+  "@type" "Event"
+  "name" .Site.Title
+  "description" $desc
+  "url" .Permalink
+  "eventStatus" "https://schema.org/EventScheduled"
+  "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+  "location" $loc
+  "organizer" $organizers
+  "isAccessibleForFree" true }}
+{{- with $p.eventStart }}{{ $ev = merge $ev (dict "startDate" .) }}{{ end }}
+{{- with $p.eventEnd }}{{ $ev = merge $ev (dict "endDate" .) }}{{ end }}
+{{- with $p.socialImage }}{{ $ev = merge $ev (dict "image" (. | absURL)) }}{{ end }}
+{{- if not $p.eventPast }}
+  {{- /* Free admission; the offer URL is the registration form while one is open, else this page. */}}
+  {{- $offer := dict "@type" "Offer" "url" ($p.registerURL | default .Permalink) "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock" }}
+  {{- $ev = merge $ev (dict "offers" $offer) }}
+{{- end }}
+{{- with hugo.Data.speakers }}
+  {{- $performers := slice }}
+  {{- range . }}{{ $performers = $performers | append (dict "@type" "Person" "name" .name "affiliation" (dict "@type" "Organization" "name" .affiliation)) }}{{ end }}
+  {{- $ev = merge $ev (dict "performer" $performers) }}
+{{- end }}
+<script type="application/ld+json">{{ $ev | jsonify | safeJS }}</script>

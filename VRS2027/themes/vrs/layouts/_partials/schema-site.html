@@ -1,0 +1,16 @@
+{{/* schema.org WebSite + Organization: tells Google the site's name ("Virginia
+     Robotics Symposium", alternate "VRS") independent of the yearly page
+     title, and links the organizing institutions via sameAs. */}}
+{{- $p := .Site.Params }}
+{{- $name := $p.siteName | default .Site.Title }}
+{{- $sameAs := slice }}
+{{- range hugo.Data.institutions }}{{ with .url }}{{ $sameAs = $sameAs | append . }}{{ end }}{{ end }}
+{{- $org := dict "@type" "Organization" "@id" (printf "%s#organization" .Site.BaseURL) "name" $name "url" .Site.BaseURL }}
+{{- with $p.logo }}{{ with resources.Get . }}{{ $org = merge $org (dict "logo" .Permalink) }}{{ end }}{{ end }}
+{{- with $sameAs }}{{ $org = merge $org (dict "sameAs" .) }}{{ end }}
+{{- $site := dict
+  "@context" "https://schema.org"
+  "@graph" (slice
+    $org
+    (dict "@type" "WebSite" "@id" (printf "%s#website" .Site.BaseURL) "name" $name "alternateName" "VRS" "url" .Site.BaseURL "inLanguage" "en-US" "publisher" (dict "@id" (printf "%s#organization" .Site.BaseURL)))) }}
+<script type="application/ld+json">{{ $site | jsonify | safeJS }}</script>

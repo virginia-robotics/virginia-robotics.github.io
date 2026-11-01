@@ -8,8 +8,10 @@
               retina screens (default 128)
        class  classes for the <img>
 
-     A path Hugo can't resolve as an asset — an external URL, or a file still
-     sitting in static/ — is emitted unprocessed so nothing silently vanishes. */}}
+     An external URL is emitted unprocessed. A local path Hugo can't find in
+     assets/ fails the build (common causes: a typo, a file still in static/,
+     or a capitalisation mismatch — file names are case-sensitive on Linux
+     and on GitHub, even if your laptop ignores case). */}}
 
 {{ $px := .px | default 128 }}
 {{ $src := .image | default "img/placeholder.png" }}
@@ -19,6 +21,7 @@
 {{ $res := "" }}
 {{ if not (urls.Parse $src).Scheme }}
   {{ $res = resources.Get (strings.TrimPrefix "/" $src) }}
+  {{ if not $res }}{{ errorf "avatar: image %q not found in assets/ (check spelling and capitalisation)" $src }}{{ end }}
 {{ end }}
 
 {{ with $res }}

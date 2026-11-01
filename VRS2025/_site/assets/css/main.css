@@ -1,0 +1,9 @@
+@import url("bootstrap.min.css");
+@import url("agency.css");
+table#schedule-table td, table#schedule-table th { padding-top: 5px; padding-bottom: 5px; padding-left: 0px; padding-right: 100px; vertical-align: top; }
+
+table#schedule-table td:first-child { font-weight: 700; }
+
+table#speaker-table td, table#speaker-table th { padding-top: 5px; padding-bottom: 5px; padding-left: 0px; padding-right: 0px; }
+
+/*# sourceMappingURL=main.css.map */

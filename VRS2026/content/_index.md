@@ -9,21 +9,26 @@ heroTitle: "Virginia Robotics Symposium"
 # Shown in the hero in place of the Register button while registerURL is empty
 heroNote: "Thank you for attending VRS 2026!"
 
+# Optional extra paragraph shown at the top of About while eventPast is true in
+# hugo.toml (e.g. "VRS 2026 took place on …"). Leave empty to show nothing.
+pastNote: "VRS 2026 took place on October 23, 2026 at the Virginia Tech Graduate Life Center in Blacksburg. Thank you to all speakers, poster presenters, and attendees!"
+
 # About section — one entry per paragraph
 about:
   - "The Virginia Robotics Symposium (VRS) brings together robotics researchers from across the Commonwealth for a one-day event of research talks, poster presentations, and social activities — building connections and disseminating ideas across institutions."
   # - "With support from our sponsors, we also plan to feature industry presentations, showcasing robotics innovation from companies across the region."
 
-# Registration card (shows note + cta when registerURL is set, else `pending`)
+# Registration card (shows note + cta when registerURL is set in hugo.toml, else
+# `pending`; HTML allowed in `pending`).
 registration:
   note: "Attendance is free."
   cta: "Click here to register!"
-  pending: "Thank you for attending VRS 2026! Registration for this event has closed."
+  pending: "Thank you for attending VRS 2026! <b>Registration has closed.</b>"
 
 # Poster card (shows note + cta when posterURL is set, else `pending`; HTML allowed
 # in `pending`). `closed` replaces both while postersPage is false in hugo.toml.
 poster:
-  closed: "Thank you to everyone who presented a poster at VRS 2026!"
+  closed: "Students are encouraged to present research posters. <b>Poster sign-ups have closed.</b>"
   note: "Students are encouraged to present research posters."
   cta: "Click here to sign up for a poster presentation!"
   pending: 'Posters are at capacity. Check out our posters <a href="/posters/" class="font-semibold text-accent hover:underline">here</a>.'
@@ -50,6 +55,9 @@ slido:
   text: "Submit and upvote questions live on Slido throughout the day."
   cta: "Ask a question on Slido"
 
+# Appended to the "Venue" heading as "Venue: …" (leave empty for plain "Venue").
+venueHeadingSuffix: "Virginia Tech, Blacksburg"
+
 # Venue section — one entry per paragraph
 venueIntro:
   - "The 2026 symposium will be hosted at the Virginia Tech Graduate Life Center (GLC) Multipurpose Room at 155 Otey St NW, Blacksburg, VA 24061."
@@ -57,14 +65,15 @@ venueIntro:
 venuePending: "Venue details to be announced."
 # Parking maps shown next to the venue map. `embed` is a keyless Google Maps
 # embed URL (https://maps.google.com/maps?q=<place>&output=embed); `link` is
-# what the "Open in Google Maps" caption points to.
+# what the "Open in Google Maps" caption points to — use the stable
+# https://www.google.com/maps/search/?api=1&query=<place> form, not share links.
 parking:
   - name: "Kent Square Parking Garage"
     embed: "https://maps.google.com/maps?q=Kent+Square+Parking+Garage,+Blacksburg,+VA&z=16&output=embed"
-    link: "https://share.google/UWcXDID20umNeILz9"
+    link: "https://www.google.com/maps/search/?api=1&query=Kent+Square+Parking+Garage,+Blacksburg,+VA"
   - name: "North End Parking Garage"
     embed: "https://maps.google.com/maps?q=North+End+Parking+Garage,+Blacksburg,+VA&z=16&output=embed"
-    link: "https://share.google/NMaOrrtNJb1JKJQh2"
+    link: "https://www.google.com/maps/search/?api=1&query=North+End+Parking+Garage,+Blacksburg,+VA"
 
 # Contact section
 contactIntro: "For more information, please reach out to the organizers below."

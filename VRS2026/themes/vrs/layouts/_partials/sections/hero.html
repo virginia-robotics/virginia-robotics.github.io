@@ -1,13 +1,10 @@
 {{/* Optional hero background: a real <img> with object-cover (guarantees full
      coverage at any aspect ratio) + a dark overlay. Original image untouched;
-     it is only resized/recompressed. With no heroImage, a gradient built from
-     the brand colors (primary-dark → primary, with an accent-light glow). */}}
-{{ $img := "" }}
-{{ with .Site.Params.heroImage }}
-  {{ with resources.Get . }}
-    {{ $img = .Resize "2400x webp q72" }}
-  {{ end }}
-{{ end }}
+     it is only resized/recompressed, at several widths so phones download a
+     smaller file (see _partials/func/hero-image.html). With no heroImage, a
+     gradient built from the brand colors (primary-dark → primary, with an
+     accent-light glow). */}}
+{{ $img := partial "func/hero-image.html" . }}
 
 <section id="top"
   class="relative flex {{ if .IsHome }}min-h-[80vh]{{ else }}min-h-[50vh]{{ end }} flex-col items-center justify-center overflow-hidden px-4 py-28 text-center text-white {{ if not $img }}bg-primary{{ end }}"
@@ -16,7 +13,8 @@
     radial-gradient(ellipse 50% 60% at 10% 90%, color-mix(in srgb, var(--vrs-accent-light) 14%, transparent), transparent),
     linear-gradient(160deg, var(--vrs-primary-dark) 0%, var(--vrs-primary) 60%, var(--vrs-primary-dark) 100%);"{{ end }}>
   {{ with $img }}
-  <img src="{{ .RelPermalink }}" alt="" aria-hidden="true" fetchpriority="high"
+  <img src="{{ .src }}" srcset="{{ .srcset }}" sizes="100vw" width="{{ .width }}" height="{{ .height }}"
+       alt="" aria-hidden="true" fetchpriority="high"
        class="absolute inset-0 -z-10 h-full w-full object-cover">
   <div class="absolute inset-0 -z-10" style="background: linear-gradient(rgba(40,0,20,0.55), rgba(0,0,0,0.68));"></div>
   {{ with $.Site.Params.heroCredit }}

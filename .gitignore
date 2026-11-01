@@ -20,10 +20,10 @@ VRS202[67]/node_modules/
 # Poster registration exports (contain emails)
 Poster Registration *.csv
 
-# ===== Jekyll build artifacts (VRS2025) =====
-VRS2025/_site/
-VRS2025/.jekyll-cache/
-VRS2025/.jekyll-metadata
-VRS2025/.sass-cache/
-VRS2025/.bundle/
-VRS2025/vendor/
+# ===== Local Python env for tools/ scripts (optional) =====
+VRS2026/.venv/
+
+
+# ===== Stray Hugo runs from the repo root =====
+/public/
+/.hugo_build.lock

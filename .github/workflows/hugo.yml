@@ -1,0 +1,81 @@
+# Builds the Hugo site on every push to main and deploys it to GitHub Pages.
+#
+# Until the switch below is made, this workflow only runs the build (a useful
+# check that main still compiles) and the deploy job is skipped; the committed
+# docs/ folder keeps being served.
+#
+# To switch to deploying from this workflow:
+#   1. Settings → Pages: change "Source" from "Deploy from a branch" to
+#      "GitHub Actions".
+#   2. Settings → Secrets and variables → Actions → Variables: add a repository
+#      variable named PAGES_VIA_ACTIONS with the value true.
+# After that, docs/ can be deleted from the repo and the manual
+# `hugo -d ../docs` step in README.md goes away.
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  HUGO_VERSION: 0.169.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: VRS2027
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so enableGitInfo can fill <lastmod>
+
+      - name: Install Hugo (extended)
+        run: |
+          curl -sSL -o /tmp/hugo.deb \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i /tmp/hugo.deb
+          hugo version
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: VRS2027/package-lock.json
+
+      - name: Install Tailwind CLI
+        run: npm ci
+
+      - name: Build
+        run: hugo --minify --gc --baseURL "https://virginia-robotics.github.io/"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: VRS2027/public
+
+  deploy:
+    # Only deploys once the PAGES_VIA_ACTIONS repository variable is set (see
+    # the comment at the top); deploy-pages fails if Pages is still set to
+    # "Deploy from a branch".
+    if: github.event_name != 'pull_request' && vars.PAGES_VIA_ACTIONS == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,30 @@
+{{/* Logo image served at the size it is displayed (rather than the full-size
+     original). Params:
+       image   assets-relative path; a leading "/" is tolerated
+       alt     alt text
+       height  rendered CSS height in px (the file is generated at 3x for
+               retina screens); SVGs are passed through untouched
+       class   classes for the <img>
+     A local path that isn't found in assets/ fails the build. */}}
+{{ $src := .image }}
+{{ $alt := .alt | default "" }}
+{{ $h := .height | default 48 }}
+{{ $class := .class | default "" }}
+{{ $res := "" }}
+{{ if not (urls.Parse $src).Scheme }}
+  {{ $res = resources.Get (strings.TrimPrefix "/" $src) }}
+  {{ if not $res }}{{ errorf "logo: image %q not found in assets/ (check spelling and capitalisation)" $src }}{{ end }}
+{{ end }}
+{{ with $res }}
+  {{ if eq .MediaType.SubType "svg" }}
+  <img src="{{ .RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}">
+  {{ else }}
+    {{ $target := mul $h 3 }}
+    {{ $img := . }}
+    {{ if lt $target .Height }}{{ $img = .Resize (printf "x%d" $target) }}{{ end }}
+    {{ $w := math.Round (mul $h (div (float $img.Width) (float $img.Height))) }}
+  <img src="{{ $img.RelPermalink }}" width="{{ $w }}" height="{{ $h }}" alt="{{ $alt }}" class="{{ $class }}">
+  {{ end }}
+{{ else }}
+  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}">
+{{ end }}

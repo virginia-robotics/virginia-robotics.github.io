@@ -1,0 +1,26 @@
+{{/* Returns the hero background as a dict {src, srcset, width, height}, or
+     nil when no heroImage is configured. The original is only resized and
+     recompressed, never cropped. Several widths are generated so phones get
+     a file sized for their screen instead of the 2400px desktop version. */}}
+{{ $out := dict }}
+{{ with .Site.Params.heroImage }}
+  {{ with resources.Get . }}
+    {{ $orig := . }}
+    {{ $widths := slice 640 1024 1600 2400 }}
+    {{ $set := slice }}
+    {{ $largest := "" }}
+    {{ range $widths }}
+      {{ if le . $orig.Width }}
+        {{ $v := $orig.Resize (printf "%dx webp q72" .) }}
+        {{ $set = $set | append (printf "%s %dw" $v.RelPermalink $v.Width) }}
+        {{ $largest = $v }}
+      {{ end }}
+    {{ end }}
+    {{ if not $largest }}
+      {{ $largest = $orig.Resize (printf "%dx webp q72" $orig.Width) }}
+      {{ $set = slice (printf "%s %dw" $largest.RelPermalink $largest.Width) }}
+    {{ end }}
+    {{ $out = dict "src" $largest.RelPermalink "srcset" (delimit $set ", ") "width" $largest.Width "height" $largest.Height }}
+  {{ end }}
+{{ end }}
+{{ return $out }}
