@@ -84,5 +84,8 @@
     {{ end }}
   {{ end }}
 
-  {{ if .IsHome }}{{ partial "schema-site.html" . }}{{ partial "schema-event.html" . }}{{ end }}
+  {{/* WebSite/Organization schema describes the whole site, so only the current
+       year's root emits it (params.archive = true on an archived year skips it);
+       the Event schema belongs to each year's page. */}}
+  {{ if .IsHome }}{{ if not .Site.Params.archive }}{{ partial "schema-site.html" . }}{{ end }}{{ partial "schema-event.html" . }}{{ end }}
 </head>

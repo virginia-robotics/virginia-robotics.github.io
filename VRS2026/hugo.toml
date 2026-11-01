@@ -5,8 +5,10 @@ title = 'Virginia Robotics Symposium 2026'
 theme = 'vrs'
 
 # Single-page site: no tags/categories/term pages.
-disableKinds = ['taxonomy', 'term', 'rss']
-enableRobotsTXT = true   # layouts/robots.txt (advertises the sitemap)
+# Archived year: the root site's robots.txt and sitemap.xml cover /2026/, so
+# this build emits neither.
+disableKinds = ['taxonomy', 'term', 'rss', 'sitemap']
+enableRobotsTXT = false
 enableGitInfo = true     # <lastmod> in sitemap.xml comes from the last commit
 disableHugoGeneratorInject = true   # no <meta name=generator> in the head
 
@@ -46,6 +48,7 @@ disableHugoGeneratorInject = true   # no <meta name=generator> in the head
 
 [params]
   postersPage = false   # see the Poster Session block near the top
+  archive = true        # archived year: no site-level (WebSite/Organization) schema
 
   # --- Event state ---
   # Flip eventPast to true once the symposium has happened. It switches the

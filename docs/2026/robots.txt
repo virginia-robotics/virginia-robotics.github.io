@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://virginia-robotics.github.io/2026/sitemap.xml
