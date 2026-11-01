@@ -36,7 +36,7 @@
     <h3 class="mt-12 text-center text-sm font-semibold uppercase tracking-wide text-muted">Organizing Institutions</h3>
     <div class="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12">
       {{ range . }}
-      <a href="{{ .url }}" class="block"><img src="{{ .logo }}" alt="{{ .name }}" class="h-12 w-auto max-w-full object-contain opacity-80 transition hover:opacity-100 sm:h-14"></a>
+      <a href="{{ .url }}" class="block">{{ partial "logo.html" (dict "image" .logo "alt" .name "height" 56 "class" "h-12 w-auto max-w-full object-contain opacity-80 transition hover:opacity-100 sm:h-14") }}</a>
       {{ end }}
     </div>
     {{ end }}
@@ -48,7 +48,7 @@
     {{ with hugo.Data.sponsors }}
     <div class="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12">
       {{ range . }}
-      <a href="{{ .url }}" class="block"><img src="{{ .logo }}" alt="{{ .name }}" class="h-12 w-auto max-w-full object-contain opacity-80 transition hover:opacity-100 sm:h-14"></a>
+      <a href="{{ .url }}" class="block">{{ partial "logo.html" (dict "image" .logo "alt" .name "height" 56 "class" "h-12 w-auto max-w-full object-contain opacity-80 transition hover:opacity-100 sm:h-14") }}</a>
       {{ end }}
     </div>
     {{ end }}

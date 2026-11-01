@@ -21,6 +21,8 @@ hugo -d ../docs --cleanDestinationDir
 
 This builds the Hugo site (compiling Tailwind CSS through Hugo's asset pipeline) and writes the output to the repo-root `docs/` folder. Commit `docs/` and push — GitHub Pages serves it.
 
+A GitHub Actions workflow (`.github/workflows/hugo.yml`) also builds the site on every push and pull request as a check. It can take over deployment too (so `docs/` no longer needs to be committed); the steps to switch are in the comment at the top of that file.
+
 > **First time only** — install the Tailwind build dependencies (requires [Node.js](https://nodejs.org/)), from inside `VRS2026/`:
 > ```bash
 > npm install

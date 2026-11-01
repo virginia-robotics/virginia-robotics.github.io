@@ -1,16 +1,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
-  <meta name="description" content="{{ .Site.Params.tagline | default .Site.Title }}">
+  {{- $title := cond .IsHome .Site.Title (printf "%s · %s" .Title .Site.Title) }}
+  {{- $desc := .Params.description | default .Site.Params.description | default .Site.Params.tagline | default .Site.Title }}
+  <title>{{ $title }}</title>
+  <meta name="description" content="{{ $desc }}">
+  <link rel="canonical" href="{{ .Permalink }}">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  {{/* Link previews (Slack, Teams, LinkedIn, X, iMessage, email clients).
+       The card is static/img/social-card.jpg (1200x630), regenerated with
+       tools/make-social-card.py; see README. */}}
+  {{- $card := "" }}
+  {{- with .Site.Params.socialImage }}{{ $card = . | absURL }}{{ end }}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:locale" content="en_US">
+  {{- with $card }}
+  <meta property="og:image" content="{{ . }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ . }}">
+  {{- else }}
+  <meta name="twitter:card" content="summary">
+  {{- end }}
+  <meta name="twitter:title" content="{{ $title }}">
+  <meta name="twitter:description" content="{{ $desc }}">
 
-  {{ with .Site.Params.favicon | default "/img/favicons/favicon.ico" }}
-  <link rel="icon" href="{{ . }}">
-  {{ end }}
+  {{/* Favicons: all files live in static/img/favicons/ */}}
+  <link rel="icon" href="{{ .Site.Params.favicon | default "/img/favicons/favicon.ico" }}" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/img/favicons/site.webmanifest">
+  <meta name="theme-color" content="{{ .Site.Params.colors.primary | default "#630031" }}">
+
+  {{/* Self-hosted Inter (variable, Latin subsets) — declared in assets/css/main.css.
+       Preload the Latin file so text renders without waiting for the CSS. */}}
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  {{/* Hero image: start the download before the stylesheet is parsed. */}}
+  {{- with partial "func/hero-image.html" . }}
+  <link rel="preload" as="image" href="{{ .src }}" {{ printf "imagesrcset=%q" .srcset | safeHTMLAttr }} imagesizes="100vw" fetchpriority="high">
+  {{- end }}
+
+  {{/* Brand colors from hugo.toml [params.colors]; main.css maps them to Tailwind utilities. */}}
+  {{- $c := .Site.Params.colors }}
+  <style>
+    :root {
+      --vrs-primary: {{ $c.primary | default "#630031" | safeCSS }};
+      --vrs-primary-dark: {{ $c.primaryDark | default "#4a0025" | safeCSS }};
+      --vrs-accent: {{ $c.accent | default "#CF4420" | safeCSS }};
+      --vrs-accent-light: {{ $c.accentLight | default "#e8632f" | safeCSS }};
+      --vrs-ink: {{ $c.ink | default "#1a1a1a" | safeCSS }};
+      --vrs-muted: {{ $c.muted | default "#6b7280" | safeCSS }};
+    }
+  </style>
 
   {{ with (templates.Defer (dict "key" "global")) }}
     {{ with resources.Get "css/main.css" }}
@@ -26,4 +74,6 @@
       {{ end }}
     {{ end }}
   {{ end }}
+
+  {{ if .IsHome }}{{ partial "schema-event.html" . }}{{ end }}
 </head>

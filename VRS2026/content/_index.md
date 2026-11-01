@@ -55,14 +55,15 @@ venueIntro:
 venuePending: "Venue details to be announced."
 # Parking maps shown next to the venue map. `embed` is a keyless Google Maps
 # embed URL (https://maps.google.com/maps?q=<place>&output=embed); `link` is
-# what the "Open in Google Maps" caption points to.
+# what the "Open in Google Maps" caption points to — use the stable
+# https://www.google.com/maps/search/?api=1&query=<place> form, not share links.
 parking:
   - name: "Kent Square Parking Garage"
     embed: "https://maps.google.com/maps?q=Kent+Square+Parking+Garage,+Blacksburg,+VA&z=16&output=embed"
-    link: "https://share.google/UWcXDID20umNeILz9"
+    link: "https://www.google.com/maps/search/?api=1&query=Kent+Square+Parking+Garage,+Blacksburg,+VA"
   - name: "North End Parking Garage"
     embed: "https://maps.google.com/maps?q=North+End+Parking+Garage,+Blacksburg,+VA&z=16&output=embed"
-    link: "https://share.google/NMaOrrtNJb1JKJQh2"
+    link: "https://www.google.com/maps/search/?api=1&query=North+End+Parking+Garage,+Blacksburg,+VA"
 
 # Contact section
 contactIntro: "For more information, please reach out to the organizers below."

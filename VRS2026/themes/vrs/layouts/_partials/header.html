@@ -12,7 +12,7 @@
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
     <a href="{{ $home }}#top" class="flex items-center">
       {{ with .Site.Params.logo }}
-      <img src="{{ . }}" alt="{{ $.Site.Title }}" class="h-7 w-auto rounded-md bg-white px-2.5 py-1.5 sm:h-8">
+      {{ partial "logo.html" (dict "image" . "alt" $.Site.Title "height" 32 "class" "h-7 w-auto rounded-md bg-white px-2.5 py-1.5 sm:h-8") }}
       {{ else }}
       <span class="text-lg font-extrabold tracking-tight">{{ .Site.Title }}</span>
       {{ end }}

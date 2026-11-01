@@ -5,6 +5,8 @@ theme = 'vrs'
 
 # Single-page site: no tags/categories/term pages.
 disableKinds = ['taxonomy', 'term', 'rss']
+enableRobotsTXT = true   # layouts/robots.txt (advertises the sitemap)
+enableGitInfo = true     # <lastmod> in sitemap.xml comes from the last commit
 
 # --- Poster Session page (/posters/) ---
 # Set postersPage to true to publish the page again; false removes the page
@@ -15,18 +17,21 @@ disableKinds = ['taxonomy', 'term', 'rss']
   [cascade.build]
     render = 'never'
     list = 'never'
-  [cascade._target]
+  [cascade.target]
     path = '/posters'
 
 # --- Tailwind CSS v4 build wiring (Hugo docs recipe) ---
+# Hugo runs the Tailwind CLI (node_modules/.bin/tailwindcss, or a standalone
+# `tailwindcss` on PATH) as an external program, which must be allowed here.
+[security]
+  [security.exec]
+    allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^node$', '^npx$', '^postcss$', '^tailwindcss$']
+
 [build]
   [build.buildStats]
     enable = true
   [[build.cachebusters]]
     source = 'assets/notwatching/hugo_stats\.json'
-    target = 'css'
-  [[build.cachebusters]]
-    source = '(postcss|tailwind)\.config\.js'
     target = 'css'
 
 [[module.mounts]]
@@ -40,10 +45,20 @@ disableKinds = ['taxonomy', 'term', 'rss']
 [params]
   postersPage = false   # see the Poster Session block near the top
   dateline = 'October 23, 2026'
+  # Machine-readable event times (ISO 8601 with UTC offset) — used only for the
+  # schema.org Event data in the page head (Google event rich results).
+  eventStart = '2026-10-23T09:30:00-04:00'
+  eventEnd = '2026-10-23T17:00:00-04:00'
   timeRange = '9:30 AM – 5:00 PM'   # appended to the dateline in the hero ('' to hide)
   venue = 'Virginia Tech Graduate Life Center (GLC)'
   location = 'Blacksburg, VA'
   tagline = 'A one-day symposium bringing together robotics researchers from across the Commonwealth for research talks, posters, and new collaborations.'
+  # Search-engine / link-preview description (keep under ~160 characters and
+  # include the date, host, and city — the words people actually search for).
+  description = 'Virginia Robotics Symposium 2026: a free one-day event of research talks, posters, and networking for robotics researchers across Virginia. October 23, 2026 at Virginia Tech, Blacksburg, VA.'
+  # 1200x630 link-preview image (Open Graph / Twitter card). Regenerate with
+  # tools/make-social-card.py after changing the date or hero image.
+  socialImage = '/img/social-card.jpg'
   registerURL = 'https://forms.gle/qQn6Cozz1WDzbxAn8'   # set to a form URL to show a Register button
   posterURL = ''     # set to a form URL to show a Poster sign-up button ('' => shows poster.pending from _index.md)
   # Map iframe src. OpenStreetMap embed (no API key) centered on Virginia Tech.
@@ -56,11 +71,19 @@ disableKinds = ['taxonomy', 'term', 'rss']
   # in assets/sponsorship/): sponsorMenu = 'sponsorship/SponsorMenu.pdf'
   sponsorMenu = ''  # assets-relative PDF for the sponsor CTA ('' to hide the Sponsors block)
   favicon = '/img/favicons/favicon.ico'
-  logo = '/img/logos/logo.png'            # nav brand image; empty => site title text
+  logo = 'img/logos/logo.png'             # assets-relative nav brand image, resized to display size; empty => site title text
   heroImage = 'img/teaser/robots_3.jpg'   # assets-relative; processed + darkened for the hero
   heroCredit = 'Doodle by Steven White'   # small credit in the hero's bottom-right corner ('' to hide)
   archiveURL = '/2025/'
   archiveLabel = 'VRS 2025 page'
+
+  # Street address of the venue, for the schema.org Event data.
+  [params.address]
+    street = '155 Otey St NW'
+    city = 'Blacksburg'
+    region = 'VA'
+    postal = '24061'
+    country = 'US'
 
   [params.colors]
     primary = '#630031'       # VT Chicago Maroon

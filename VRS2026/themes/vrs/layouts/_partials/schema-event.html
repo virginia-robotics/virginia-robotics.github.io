@@ -1,0 +1,37 @@
+{{/* schema.org Event structured data (Google event rich results).
+     Everything comes from hugo.toml [params]: eventStart / eventEnd (ISO 8601
+     with offset), venue, [params.address], registerURL, socialImage. */}}
+{{- $p := .Site.Params }}
+{{- $desc := $p.description | default $p.tagline | default .Site.Title }}
+{{- $loc := dict "@type" "Place" "name" $p.venue }}
+{{- with $p.address }}
+  {{- $addr := dict "@type" "PostalAddress" "addressCountry" (.country | default "US") }}
+  {{- with .street }}{{ $addr = merge $addr (dict "streetAddress" .) }}{{ end }}
+  {{- with .city }}{{ $addr = merge $addr (dict "addressLocality" .) }}{{ end }}
+  {{- with .region }}{{ $addr = merge $addr (dict "addressRegion" .) }}{{ end }}
+  {{- with .postal }}{{ $addr = merge $addr (dict "postalCode" .) }}{{ end }}
+  {{- $loc = merge $loc (dict "address" $addr) }}
+{{- end }}
+{{- $ev := dict
+  "@context" "https://schema.org"
+  "@type" "Event"
+  "name" .Site.Title
+  "description" $desc
+  "url" .Permalink
+  "eventStatus" "https://schema.org/EventScheduled"
+  "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+  "location" $loc
+  "organizer" (dict "@type" "Organization" "name" "Virginia Robotics Symposium" "url" .Site.BaseURL)
+  "isAccessibleForFree" true }}
+{{- with $p.eventStart }}{{ $ev = merge $ev (dict "startDate" .) }}{{ end }}
+{{- with $p.eventEnd }}{{ $ev = merge $ev (dict "endDate" .) }}{{ end }}
+{{- with $p.socialImage }}{{ $ev = merge $ev (dict "image" (. | absURL)) }}{{ end }}
+{{- with $p.registerURL }}
+  {{- $ev = merge $ev (dict "offers" (dict "@type" "Offer" "url" . "price" "0" "priceCurrency" "USD" "availability" "https://schema.org/InStock")) }}
+{{- end }}
+{{- with hugo.Data.speakers }}
+  {{- $performers := slice }}
+  {{- range . }}{{ $performers = $performers | append (dict "@type" "Person" "name" .name "affiliation" .affiliation) }}{{ end }}
+  {{- $ev = merge $ev (dict "performer" $performers) }}
+{{- end }}
+<script type="application/ld+json">{{ $ev | jsonify | safeJS }}</script>
