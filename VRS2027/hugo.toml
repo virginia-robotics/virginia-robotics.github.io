@@ -78,6 +78,12 @@ disableHugoGeneratorInject = true   # no <meta name=generator> in the head
   archiveURL = '/2026/'
   archiveLastmod = '2026-11-01'   # update when static/2026/ changes (sitemap <lastmod>)
   archiveLabel = 'VRS 2026 page'
+  # Every archived year, for sitemap.xml (the footer button uses archiveURL above).
+  # Update a lastmod when that static/<year>/ folder changes.
+  archives = [
+    { url = '/2026/', lastmod = '2026-11-01' },
+    { url = '/2025/', lastmod = '2026-11-01' },
+  ]
 
   # Street address of the venue, for the schema.org Event data. Refine once
   # the building is known.

@@ -7,10 +7,14 @@
     <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}</lastmod>{{ end }}
   </url>
   {{ end }}{{ end }}
-  {{- /* The archived previous-year site is static HTML outside Hugo's page tree. */}}
-  {{ with .Site.Params.archiveURL }}
+  {{- /* Archived previous-year sites are static HTML outside Hugo's page tree.
+         List them in params.archives ([{url, lastmod}, ...]); with no such list
+         the single archiveURL/archiveLastmod pair from the footer is used. */}}
+  {{- $archives := .Site.Params.archives }}
+  {{- if not $archives }}{{ with .Site.Params.archiveURL }}{{ $archives = slice (dict "url" . "lastmod" $.Site.Params.archiveLastmod) }}{{ end }}{{ end }}
+  {{ range $archives }}
   <url>
-    <loc>{{ . | absURL }}</loc>{{ with $.Site.Params.archiveLastmod }}
+    <loc>{{ strings.TrimPrefix "/" .url | absURL }}</loc>{{ with .lastmod }}
     <lastmod>{{ . }}</lastmod>{{ end }}
   </url>
   {{ end }}
