@@ -6,9 +6,16 @@ static/img/social-card.jpg. Run from VRS2026/ whenever those change:
 
     python3 tools/make-social-card.py
 
+For an archived year, override the text and output path, e.g.:
+
+    python3 tools/make-social-card.py --line2 "November 14, 2025" \
+        --line3 "Link Lab · Charlottesville, VA" \
+        --out static/2025/assets/img/social-card.jpg
+
 Requires Pillow (pip install pillow). The text is set in Lato Bold if the
 system has it (sudo apt install fonts-lato), otherwise DejaVu Sans Bold.
 """
+import argparse
 import tomllib
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
@@ -16,9 +23,15 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 W, H = 1200, 630
 cfg = tomllib.loads(Path("hugo.toml").read_text())
 p = cfg["params"]
-title = "Virginia Robotics Symposium"
-line2 = p["dateline"] + ((" · " + p["timeRange"]) if p.get("timeRange") else "")
-line3 = f'{p["venue"]} · {p["location"]}'
+ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+ap.add_argument("--title", default="Virginia Robotics Symposium")
+ap.add_argument("--line2", help="second line (default: dateline · timeRange from hugo.toml)")
+ap.add_argument("--line3", help="third line (default: venue · location from hugo.toml)")
+ap.add_argument("--out", default="static/img/social-card.jpg", type=Path)
+args = ap.parse_args()
+title = args.title
+line2 = args.line2 or p["dateline"] + ((" · " + p["timeRange"]) if p.get("timeRange") else "")
+line3 = args.line3 or f'{p["venue"]} · {p["location"]}'
 accent = tuple(int(p["colors"]["accentLight"].lstrip("#")[i:i+2], 16) for i in (0, 2, 4))
 
 def font(size):
@@ -52,6 +65,6 @@ centered(title, 215, 78, (255, 255, 255))
 centered(line2, 330, 42, accent)
 centered(line3, 400, 30, (235, 235, 235))
 
-out = Path("static/img/social-card.jpg")
+out = args.out
 bg.save(out, "JPEG", quality=85, optimize=True, progressive=True)
 print(f"wrote {out} ({out.stat().st_size // 1024} KB)")

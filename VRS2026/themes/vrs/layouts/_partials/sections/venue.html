@@ -1,6 +1,6 @@
 <section id="venue" class="bg-gray-50 px-4 py-20">
   <div class="mx-auto max-w-5xl">
-    <h2 class="text-3xl font-bold text-primary">Venue</h2>
+    <h2 class="text-3xl font-bold text-primary">Venue{{ with .Params.venueHeadingSuffix }}: {{ . }}{{ end }}</h2>
     {{/* venueIntro may be a single string or a list of paragraphs. */}}
     {{ $venueIntro := .Params.venueIntro | default (printf "The %s symposium will be hosted at the %s in %s." .Site.Params.dateline .Site.Params.venue .Site.Params.location) }}
     {{ if reflect.IsSlice $venueIntro | not }}{{ $venueIntro = slice $venueIntro }}{{ end }}

@@ -1,11 +1,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{- $title := cond .IsHome .Site.Title (printf "%s · %s" .Title .Site.Title) }}
+  {{- $siteName := .Site.Params.siteName | default .Site.Title }}
+  {{- $title := cond .IsHome (.Site.Params.seoTitle | default .Site.Title) (printf "%s · %s" .Title .Site.Title) }}
   {{- $desc := .Params.description | default .Site.Params.description | default .Site.Params.tagline | default .Site.Title }}
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $desc }}">
+  {{- if eq .Kind "404" }}
+  <meta name="robots" content="noindex">
+  {{- else }}
   <link rel="canonical" href="{{ .Permalink }}">
+  {{- end }}
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  {{- with .Site.Params.googleSiteVerification }}
+  <meta name="google-site-verification" content="{{ . }}">
+  {{- end }}
 
   {{/* Link previews (Slack, Teams, LinkedIn, X, iMessage, email clients).
        The card is static/img/social-card.jpg (1200x630), regenerated with
@@ -13,7 +22,7 @@
   {{- $card := "" }}
   {{- with .Site.Params.socialImage }}{{ $card = . | absURL }}{{ end }}
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:site_name" content="{{ $siteName }}">
   <meta property="og:title" content="{{ $title }}">
   <meta property="og:description" content="{{ $desc }}">
   <meta property="og:url" content="{{ .Permalink }}">
@@ -75,5 +84,5 @@
     {{ end }}
   {{ end }}
 
-  {{ if .IsHome }}{{ partial "schema-event.html" . }}{{ end }}
+  {{ if .IsHome }}{{ partial "schema-site.html" . }}{{ partial "schema-event.html" . }}{{ end }}
 </head>

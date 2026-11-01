@@ -7,6 +7,10 @@ title: "Virginia Robotics Symposium 2026"
 # Hero headline (the date / host / location beneath it come from hugo.toml params)
 heroTitle: "Virginia Robotics Symposium"
 
+# Optional extra paragraph shown at the top of About while eventPast is true in
+# hugo.toml (e.g. "VRS 2026 took place on …"). Leave empty to show nothing.
+pastNote: ""
+
 # About section — one entry per paragraph
 about:
   - "The Virginia Robotics Symposium (VRS) brings together robotics researchers from across the Commonwealth for a one-day event of research talks, poster presentations, and social activities — building connections and disseminating ideas across institutions."
@@ -48,6 +52,9 @@ slido:
   heading: "Have a question for a speaker or the panel?"
   text: "Submit and upvote questions live on Slido throughout the day."
   cta: "Ask a question on Slido"
+
+# Appended to the "Venue" heading as "Venue: …" (leave empty for plain "Venue").
+venueHeadingSuffix: "Virginia Tech, Blacksburg"
 
 # Venue section — one entry per paragraph
 venueIntro:

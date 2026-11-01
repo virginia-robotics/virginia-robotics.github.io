@@ -1,6 +1,6 @@
 <section id="program" class="bg-gray-50 px-4 py-20">
   <div class="mx-auto max-w-5xl">
-    <h2 class="text-3xl font-bold text-primary">Program</h2>
+    <h2 class="text-3xl font-bold text-primary">{{ with .Site.Params.shortName }}{{ . }} {{ end }}Program</h2>
     {{ with .Params.programIntro }}<p class="mt-6 text-lg leading-relaxed text-gray-700">{{ . | safeHTML }}</p>{{ end }}
 
     <h3 class="mt-10 text-xl font-semibold text-primary">{{ .Params.speakersHeading | default "Speakers" }}</h3>

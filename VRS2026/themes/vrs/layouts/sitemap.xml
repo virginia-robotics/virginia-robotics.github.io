@@ -10,7 +10,8 @@
   {{- /* The archived previous-year site is static HTML outside Hugo's page tree. */}}
   {{ with .Site.Params.archiveURL }}
   <url>
-    <loc>{{ . | absURL }}</loc>
+    <loc>{{ . | absURL }}</loc>{{ with $.Site.Params.archiveLastmod }}
+    <lastmod>{{ . }}</lastmod>{{ end }}
   </url>
   {{ end }}
 </urlset>
